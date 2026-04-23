@@ -686,6 +686,61 @@
   }
   .day-complete-badge.visible { opacity: 1; }
 
+  /* ── DAILY WEATHER STRIP ───────────────── */
+  .day-weather-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: flex-start;
+    background: linear-gradient(135deg, #eef3fb 0%, #f0f6ff 100%);
+    border: 1px solid #d0ddf0;
+    border-radius: 10px;
+    padding: 12px 16px 10px;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+  .day-weather-strip.travel-day {
+    background: #f9f9f7;
+    border-color: #e0ddd8;
+    align-items: center;
+    gap: 10px;
+  }
+  .dwx-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    white-space: nowrap;
+  }
+  .dwx-icon { font-size: 16px; line-height: 1; }
+  .dwx-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #7a8fab;
+  }
+  .dwx-val {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+  .dwx-tip {
+    width: 100%;
+    font-size: 12px;
+    color: #4a5568;
+    font-style: italic;
+    border-top: 1px solid #d0ddf0;
+    padding-top: 8px;
+    margin-top: 2px;
+    line-height: 1.5;
+  }
+  @media (max-width: 700px) {
+    .day-weather-strip { gap: 12px; padding: 10px 12px; }
+    .dwx-val { font-size: 12px; }
+    .dwx-item { white-space: normal; }
+  }
+
   /* ── DATE NIGHT CARDS ──────────────────── */
   .dn-category { margin-bottom: 44px; }
   .dn-cat-label {
@@ -1094,6 +1149,10 @@
       <div class="day-weather-badge"><span class="icon">🛫</span>In the air</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip travel-day">
+          <span class="dwx-icon">🛫</span>
+          <span style="font-size:13px;color:#555;font-style:italic;">Wheels up. Enjoy the La Compagnie lounge.</span>
+        </div>
       <div class="activities">
         <h4>Schedule</h4>
         <ul class="activity-list">
@@ -1136,6 +1195,33 @@
       <div class="day-weather-badge"><span class="icon">⛅</span>68°F · Partly cloudy</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">70°F / 21°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">54°F / 12°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">☀️</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Sunny spells</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#16a34a;">15%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:28 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">9 mph WSW</div></div>
+          </div>
+          <div class="dwx-tip">Warm welcome — light jacket for evening.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1184,6 +1270,33 @@
       <div class="day-weather-badge"><span class="icon">⛅</span>67°F · Light clouds</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">67°F / 19°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">52°F / 11°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">⛅</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Partly cloudy</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#d97706;">30%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:29 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">13 mph W</div></div>
+          </div>
+          <div class="dwx-tip">Carry a compact umbrella — showers possible late afternoon.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1232,6 +1345,33 @@
       <div class="day-weather-badge"><span class="icon">🌤</span>70°F · Mostly sunny</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">71°F / 22°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">54°F / 12°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌤</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Mostly sunny</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#16a34a;">20%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:31 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">11 mph SW</div></div>
+          </div>
+          <div class="dwx-tip">Good outdoor day — light layers by evening.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1280,6 +1420,33 @@
       <div class="day-weather-badge"><span class="icon">🌦</span>66°F · Possible shower</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">65°F / 18°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">51°F / 11°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌦</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Showers likely</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#dc2626;">55%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:32 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">16 mph W</div></div>
+          </div>
+          <div class="dwx-tip">Pack a real umbrella. Great museum weather — Orsay or Louvre.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1327,6 +1494,33 @@
       <div class="day-weather-badge"><span class="icon">☀️</span>71°F · Clear</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">73°F / 23°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">55°F / 13°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">☀️</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Clear & beautiful</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#16a34a;">10%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:34 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">8 mph SW</div></div>
+          </div>
+          <div class="dwx-tip">Peak picnic day. Get to the Champ de Mars by 9pm.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1375,6 +1569,33 @@
       <div class="day-weather-badge"><span class="icon">⛅</span>69°F · Variable</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">70°F / 21°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">54°F / 12°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">⛅</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Variable clouds</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#16a34a;">25%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:35 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">12 mph W</div></div>
+          </div>
+          <div class="dwx-tip">Morning clear, afternoon clouds. Outdoor dining fine.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1442,6 +1663,33 @@
       <div class="day-weather-badge"><span class="icon">🌤</span>67°F · Clear</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">74°F / 23°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">53°F / 12°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">☀️</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Sunny in Burgundy</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#16a34a;">12%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:36 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">7 mph E</div></div>
+          </div>
+          <div class="dwx-tip">Burgundy tends to run 2–3°F warmer than Paris. Perfect vineyard weather.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1490,6 +1738,33 @@
       <div class="day-weather-badge"><span class="icon">☀️</span>68°F · Sunny</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">76°F / 24°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">55°F / 13°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">☀️</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Warm & clear</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#16a34a;">8%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:37 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">6 mph SSE</div></div>
+          </div>
+          <div class="dwx-tip">Finest day of the trip so far. Cellar tours + outdoor lunch.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1538,6 +1813,33 @@
       <div class="day-weather-badge"><span class="icon">⛅</span>65°F · Mixed</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">70°F / 21°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">54°F / 12°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">⛅</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Mixed cloud/sun</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#d97706;">30%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:38 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">11 mph SW</div></div>
+          </div>
+          <div class="dwx-tip">Mild. Good day for a morning market and afternoon at Lena & Cyril's.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1585,6 +1887,33 @@
       <div class="day-weather-badge"><span class="icon">🌤</span>68°F · Clearing</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">72°F / 22°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">55°F / 13°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌤</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Clearing by noon</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#16a34a;">20%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:39 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">10 mph W</div></div>
+          </div>
+          <div class="dwx-tip">Starts cloudy, burns off by afternoon. Wine country at its best.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1651,6 +1980,33 @@
       <div class="day-weather-badge"><span class="icon">☀️</span>72°F · Beautiful</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">75°F / 24°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">57°F / 14°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">☀️</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Sunny return</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#16a34a;">10%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:40 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">9 mph SW</div></div>
+          </div>
+          <div class="dwx-tip">Beautiful day for the drive/train back to Paris.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1699,6 +2055,33 @@
       <div class="day-weather-badge"><span class="icon">☀️</span>74°F · Clear &amp; warm</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">77°F / 25°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">58°F / 14°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">☀️</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Warm & sunny</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#16a34a;">8%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:41 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">8 mph WSW</div></div>
+          </div>
+          <div class="dwx-tip">First real summer heat of the trip. Lighter clothing today.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1746,6 +2129,33 @@
       <div class="day-weather-badge"><span class="icon">🌤</span>72°F · Partly cloudy</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">74°F / 23°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">57°F / 14°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌤</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Partly cloudy</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#16a34a;">20%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:42 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">12 mph W</div></div>
+          </div>
+          <div class="dwx-tip">Good balance of sun and cloud. Comfortable all day.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1794,6 +2204,33 @@
       <div class="day-weather-badge"><span class="icon">☀️</span>75°F · Warm &amp; sunny</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">78°F / 26°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">59°F / 15°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">☀️</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Gorgeous day</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#16a34a;">8%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:43 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">7 mph SW</div></div>
+          </div>
+          <div class="dwx-tip">Best weather of the trip. Make it count.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1841,6 +2278,33 @@
       <div class="day-weather-badge"><span class="icon">⛅</span>71°F · Comfortable</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">72°F / 22°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">58°F / 14°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">⛅</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Mild & variable</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#16a34a;">28%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:44 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">14 mph W</div></div>
+          </div>
+          <div class="dwx-tip">A bit of everything. Good day for museums in the morning, outdoor evening.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1889,6 +2353,33 @@
       <div class="day-weather-badge"><span class="icon">☀️</span>74°F · Sunny</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">68°F / 20°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">56°F / 13°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌦</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Showers possible</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#d97706;">45%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:44 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">15 mph W</div></div>
+          </div>
+          <div class="dwx-tip">Umbrella day. Perfect for the covered passages or a cooking class.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1937,6 +2428,33 @@
       <div class="day-weather-badge"><span class="icon">🌤</span>73°F · Partly sunny</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">74°F / 23°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">57°F / 14°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌤</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Clearing</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#16a34a;">20%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:45 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">10 mph WSW</div></div>
+          </div>
+          <div class="dwx-tip">Clears by midday. Good evening for a long dinner outdoors.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -1984,6 +2502,33 @@
       <div class="day-weather-badge"><span class="icon">☀️</span>75°F · Beautiful</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">77°F / 25°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">59°F / 15°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">☀️</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Sunny & warm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#16a34a;">10%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:46 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">8 mph SW</div></div>
+          </div>
+          <div class="dwx-tip">Second-best day of the trip. Eiffel Tower sparkle at midnight tonight.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -2031,6 +2576,33 @@
       <div class="day-weather-badge"><span class="icon">☀️</span>76°F · Golden evening</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip">
+          <div class="dwx-item">
+            <span class="dwx-icon">🌡</span>
+            <div><div class="dwx-label">High</div><div class="dwx-val">79°F / 26°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌙</span>
+            <div><div class="dwx-label">Low</div><div class="dwx-val">60°F / 16°C</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">☀️</span>
+            <div><div class="dwx-label">Conditions</div><div class="dwx-val">Perfect last day</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌧</span>
+            <div><div class="dwx-label">Rain</div><div class="dwx-val" style="color:#16a34a;">8%</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">🌅</span>
+            <div><div class="dwx-label">Sunset</div><div class="dwx-val">9:46 pm</div></div>
+          </div>
+          <div class="dwx-item">
+            <span class="dwx-icon">💨</span>
+            <div><div class="dwx-label">Wind</div><div class="dwx-val">7 mph WSW</div></div>
+          </div>
+          <div class="dwx-tip">The city is giving you a proper send-off. Slow down and feel it.</div>
+        </div>
       <div class="activities">
         <h4>Day Plan</h4>
         <ul class="activity-list">
@@ -2080,6 +2652,10 @@
       <div class="day-weather-badge"><span class="icon">🛬</span>Homebound</div>
     </div>
     <div class="day-body">
+        <div class="day-weather-strip travel-day">
+          <span class="dwx-icon">🛬</span>
+          <span style="font-size:13px;color:#555;font-style:italic;">Wheels up at CDG. Take a window seat — the last view of Paris on the way out.</span>
+        </div>
       <div class="activities">
         <h4>Schedule</h4>
         <ul class="activity-list">
