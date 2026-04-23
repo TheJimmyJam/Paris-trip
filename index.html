@@ -688,6 +688,15 @@
 
   /* ── DATE NIGHT CARDS ──────────────────── */
   .dn-category { margin-bottom: 44px; }
+  .dn-cat-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #2d1b4e;
+    font-weight: 700;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #c9a84c;
+    margin-bottom: 18px;
+  }
   .dn-cat-header {
     font-family: 'Playfair Display', serif;
     font-size: 20px;
@@ -792,6 +801,112 @@
       .hero { height: 300px; }
       .day-card { break-inside: avoid; }
     }
+
+  /* ══════════════════════════════════════
+     MOBILE RESPONSIVE — max-width: 700px
+     ══════════════════════════════════════ */
+  @media (max-width: 700px) {
+
+    /* Prevent any horizontal bleed */
+    html, body { overflow-x: hidden; max-width: 100%; }
+
+    /* ── HERO ── */
+    .hero { height: 340px; }
+    .hero-content { padding: 0 20px 28px; }
+    .hero-title { font-size: 36px; }
+    .hero-sub { font-size: 14px; }
+
+    /* ── JUMP NAV ── */
+    .jump-nav { padding: 8px 14px !important; gap: 6px !important; flex-wrap: wrap !important; }
+    .jump-nav a { font-size: 10px !important; padding: 4px 8px !important; white-space: nowrap !important; letter-spacing: 1px !important; }
+
+    /* ── OVERVIEW STRIP ── */
+    .overview-strip { padding: 20px 16px; gap: 20px; }
+    .ov-item { min-width: 40%; }
+
+    /* ── SECTION HEADERS ── */
+    .section-header { padding: 32px 16px 20px; }
+
+    /* ── WEATHER ── */
+    .weather-section { padding: 24px 16px; }
+    .weather-grid { grid-template-columns: 1fr !important; gap: 12px; }
+
+    /* ── FLIGHTS ── */
+    .flights-section { padding: 24px 16px; }
+    .flight-card {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 16px;
+    }
+    .flight-badge { min-width: unset; width: auto; }
+    .flight-status { width: auto; text-align: left; white-space: normal; }
+    .flight-route { font-size: 16px; }
+    .flight-note { margin: 0; }
+    .setup-banner { margin: 16px; padding: 16px; }
+
+    /* ── SECTION IMAGE BANNERS ── */
+    .img-banner { height: 180px; }
+    .img-banner-overlay { padding: 0 20px; }
+    .img-banner-text h2 { font-size: 24px; }
+    .img-banner-text p { font-size: 11px; letter-spacing: 1.5px; }
+
+    /* ── DAY CARDS ── */
+    .days-section { padding: 12px 12px 40px; }
+    .day-card { margin-bottom: 16px; }
+    .day-header { padding: 14px 16px; gap: 12px; }
+    .day-number { font-size: 28px; min-width: 36px; }
+    .day-title { font-size: 15px; }
+    .day-date { font-size: 12px; }
+    .day-weather-badge .icon { font-size: 20px; }
+    .day-weather-badge { font-size: 11px; }
+    .day-body { padding: 16px 14px; }
+
+    /* ── RESTAURANTS ── */
+    .rest-row {
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .rest-tag { width: auto; font-size: 8px; }
+    .rest-name { font-size: 14px; }
+    .visited-btn { margin-left: 0; margin-top: 4px; }
+
+    /* ── TIPS ── */
+    .tips-section { padding: 28px 16px; }
+    .tips-grid { grid-template-columns: 1fr !important; gap: 12px; }
+
+    /* ── DATE NIGHTS SECTION ── */
+    .dn-grid { grid-template-columns: 1fr !important; gap: 10px; }
+    .dn-cat-label { font-size: 14px !important; }
+
+    /* Megi section */
+    .megi-section { padding: 24px 14px 40px !important; }
+    .vegan-grid { grid-template-columns: 1fr !important; }
+
+    /* ── PROGRESS BAR ── */
+    .trip-progress { padding: 8px 16px; gap: 10px; }
+    .progress-label { font-size: 9px; letter-spacing: 1px; }
+    .progress-count { font-size: 11px; }
+
+    /* ── FOOTER ── */
+    footer { font-size: 11px; padding: 18px 16px; }
+  }
+
+  /* ── TABLET (701–960px): just tighten padding ── */
+  @media (min-width: 701px) and (max-width: 960px) {
+    .hero-content { padding: 0 32px 40px; }
+    .hero-title { font-size: 48px; }
+    .overview-strip { padding: 24px 32px; }
+    .section-header { padding: 40px 32px 20px; }
+    .weather-section { padding: 28px 32px; }
+    .flights-section { padding: 28px 32px; }
+    .days-section { padding: 16px 32px 48px; }
+    .tips-section { padding: 32px 32px; }
+    .img-banner-overlay { padding: 0 32px; }
+    .setup-banner { margin: 16px 32px; }
+    .trip-progress { padding: 10px 32px; }
+    .weather-grid { grid-template-columns: 1fr 1fr !important; }
+  }
   </style>
 </head>
 <body>
@@ -811,7 +926,7 @@
 </div>
 
 <!-- ══════════ JUMP NAV ══════════ -->
-<div style="background:#fff;border-bottom:1px solid var(--border);padding:10px 60px;display:flex;gap:8px;flex-wrap:wrap;position:sticky;top:0;z-index:99;box-shadow:0 1px 6px rgba(0,0,0,0.06);">
+<div class="jump-nav" style="background:#fff;border-bottom:1px solid var(--border);padding:10px 60px;display:flex;gap:8px;flex-wrap:wrap;position:sticky;top:0;z-index:99;box-shadow:0 1px 6px rgba(0,0,0,0.06);">
   <a href="#flights" style="text-decoration:none;background:var(--cream);border:1px solid var(--border);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px;white-space:nowrap;">✈ Flights</a>
   <a href="#paris1" style="text-decoration:none;background:var(--cream);border:1px solid var(--border);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px;white-space:nowrap;">🗼 Paris I</a>
   <a href="#burgundy" style="text-decoration:none;background:#6b2737;border:1px solid #6b2737;color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px;white-space:nowrap;">🍷 Burgundy</a>
@@ -2004,7 +2119,7 @@
 </div>
 
 <!-- ══════════ MEGI SECTION ══════════ -->
-<div style="background:#fdf5ff;padding:40px 60px 60px;">
+<div class="megi-section" style="background:#fdf5ff;padding:40px 60px 60px;">
   <div style="max-width:840px;margin:0 auto;">
 
     <p style="color:#6b4a8a;font-size:14px;margin-bottom:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">She lives on the island. You're staying on the island. Plan accordingly.</p>
@@ -2013,7 +2128,7 @@
     <!-- VEGAN SPOTS QUICK REFERENCE -->
     <div style="background:#fff;border:1px solid #ddd;border-radius:10px;padding:24px 28px;margin:28px 0;">
       <h3 style="font-family:'Playfair Display',serif;color:#2d1b4e;font-size:18px;margin-bottom:16px;">🌱 Vegan Essentials — Know Before You Go</h3>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div class="vegan-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
         <div>
           <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b4a8a;margin-bottom:8px;">Dinner</div>
           <div style="font-size:14px;line-height:2;color:#333;">
