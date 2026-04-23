@@ -686,6 +686,108 @@
   }
   .day-complete-badge.visible { opacity: 1; }
 
+  /* ── DATE NIGHT CARDS ──────────────────── */
+  .dn-category { margin-bottom: 44px; }
+  .dn-cat-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #2d1b4e;
+    font-weight: 700;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #c9a84c;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .dn-count {
+    background: #2d1b4e;
+    color: #c9a84c;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+  }
+  .dn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .dn-card {
+    background: #fff;
+    border: 1px solid #e5ddd0;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .dn-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .dn-card summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+    gap: 10px;
+  }
+  .dn-card summary::-webkit-details-marker { display: none; }
+  .dn-card[open] summary { border-bottom: 1px solid #f0ebe3; background: #fdf8f0; }
+  .dn-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: #1a2e4a;
+    font-weight: 600;
+    line-height: 1.3;
+    flex: 1;
+  }
+  .dn-chevron {
+    color: #c9a84c;
+    font-size: 14px;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .dn-card[open] .dn-chevron { transform: rotate(180deg); }
+  .dn-num {
+    font-size: 10px;
+    font-weight: 900;
+    color: #ccc;
+    flex-shrink: 0;
+  }
+  .dn-body {
+    padding: 14px 16px 16px;
+  }
+  .dn-desc {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .dn-meta {
+    font-size: 11px;
+    color: #888;
+    border-top: 1px solid #f0ebe3;
+    padding-top: 8px;
+    line-height: 1.7;
+  }
+  .dn-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-bottom: 6px;
+    margin-right: 4px;
+  }
+  .tag-vegan { background: #f0fdf4; color: #16a34a; border: 1px solid #86efac; }
+  .tag-splurge { background: #fffbeb; color: #d97706; border: 1px solid #fcd34d; }
+  .tag-walkin { background: #eff6ff; color: #3b82f6; border: 1px solid #93c5fd; }
+  .tag-book { background: #fdf4ff; color: #9333ea; border: 1px solid #d8b4fe; }
+  .tag-free { background: #f0fdf4; color: #15803d; border: 1px solid #6ee7b7; }
+
   @media print {
       .hero { height: 300px; }
       .day-card { break-inside: avoid; }
@@ -1933,154 +2035,587 @@
       </div>
     </div>
 
-    <!-- DATE NIGHT 1 -->
-    <div style="background:#fff;border:1px solid #ddd;border-left:4px solid #2d1b4e;border-radius:0 10px 10px 0;padding:24px 28px;margin-bottom:20px;">
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
-        <div style="background:#2d1b4e;color:#fff;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:4px;white-space:nowrap;">Date Night 1</div>
-        <div style="font-family:'Playfair Display',serif;font-size:20px;color:#2d1b4e;font-weight:600;">Little Red Door + Le Potager de Charlotte</div>
-      </div>
-      <div style="font-size:13px;color:#888;margin-bottom:14px;">Best on a Friday or Saturday · Marais → evening → back to the island</div>
-      <div style="font-size:14px;color:#333;line-height:1.8;margin-bottom:16px;">
-        Start with dinner at <strong>Le Potager de Charlotte</strong> — one of Paris's best fully vegan restaurants, upmarket, genuinely romantic atmosphere. Beautiful plant-based bistronomy, thoughtful wine list with natural wines (many vegan-friendly). Then walk 10 minutes through the Marais to <strong>Little Red Door</strong> (60 rue Charlot, 3rd arr). Walk-in only — arrive before 8 pm or after 10:30 pm to avoid the worst of the wait. One of the top cocktail bars in the world, 9 appearances on the World's 50 Best Bars list. Seasonal menu, locally sourced ingredients, exceptional hospitality. Walk home across Pont Marie afterward.
-      </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <div style="background:#f3eeff;border:1px solid #c4a8e8;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#2d1b4e;">🍽 Dinner</strong><br>Le Potager de Charlotte · fully vegan · book ahead
-        </div>
-        <div style="background:#f3eeff;border:1px solid #c4a8e8;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#2d1b4e;">🍸 Drinks</strong><br>Little Red Door · 60 rue Charlot · walk-in · open until 2–3 am
-        </div>
-        <div style="background:#f3eeff;border:1px solid #c4a8e8;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#2d1b4e;">🌙 After</strong><br>Walk home across Pont Marie · quais at midnight
-        </div>
+    <!-- 100 DATE NIGHT IDEAS -->
+
+    <!-- ── CATEGORY 1: Active & Creative ── -->
+    <div class="dn-category">
+      <div class="dn-cat-label">🎨 Active &amp; Creative</div>
+      <div class="dn-grid">
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Painting Class at Pauline Fraisse Atelier</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Book a 2–3 hour oil or watercolor workshop at Pauline Fraisse Art &amp; Culture (paulinefraisse.com) — small groups of 3–6, taught in English and French, classic Parisian atelier setting. You'll each paint the same subject and end up with completely different results, which is half the fun. She focuses on light and impressionist technique, which feels exactly right for Paris. Walk to dinner afterward with your paintings wrapped under your arm.</div><div class="dn-meta">📍 paulinefraisse.com · English-language · book ahead · ~€80pp</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Watercolor Walk Along the Seine</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Buy a small watercolor travel kit from Gilbert Joseph (art supply store on Boulevard Saint-Michel), grab a sketchbook, and pick a spot along the Seine quais — Pont Saint-Louis, looking back at Notre-Dame, is a classic. Spend an hour painting whatever you see. No skill required. The point is the afternoon light, the company, and the effort of actually looking at something together.</div><div class="dn-meta">📍 Gilbert Joseph · 26 Blvd Saint-Michel · supplies ~€20 total · free activity</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Pottery Class in the Marais</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">L'Atelier de la Terre (atelierdelaterre.com) in the Marais offers drop-in and booked pottery sessions — wheel throwing and hand building. There is something inherently fun and a little ridiculous about doing pottery together, and you'll both walk out covered in clay and laughing. Sessions are 2 hours. They fire and glaze your piece and can ship it home if you want a keepsake. Book at least a week ahead.</div><div class="dn-meta">📍 atelierdelaterre.com · Marais · ~€60–80pp · ships internationally</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Perfume Workshop at Fragonard</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Fragonard's museum and workshop on Boulevard des Capucines runs 2-hour perfume creation workshops where you blend your own scent guided by a "nose" (parfumeur). You smell through 20+ raw ingredients and build something personal. At the end you each leave with a custom 100ml bottle of your own perfume. It's far more intimate than it sounds — you're essentially answering the question "what do I want to smell like?" together.</div><div class="dn-meta">📍 Fragonard · 9 Rue Scribe, 9th · €60–90pp · book online · 2 hours</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Macaron Making at Cook &amp; Go</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Cook &amp; Go in the Marais (cookandgo.fr) does fun 1.5-hour baking workshops — macarons, éclairs, madeleines. The macaron class can be adapted to vegan (aquafaba meringue) if you ask ahead. You pipe, fill, and assemble your own, then eat them while still warm. Walk out with a box of your own Parisian macarons. The instructor keeps it relaxed and genuinely fun, not a cooking school.</div><div class="dn-meta">📍 cookandgo.fr · 4 Rue de Bretagne, 3rd · ~€60pp · 1.5 hours</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Wine Blending Workshop at a Cave à Vins</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">O Chateau (o-chateau.com) and Château &amp; Chais en Bourgogne both offer wine blending masterclasses — you sample base varietals from different plots and blend your own cuvée, then design a label for it. As someone who'll just have come back from Burgundy, this is a fun capstone. Takes about 2 hours. You each blend a different bottle, taste each other's, argue about it.</div><div class="dn-meta">📍 O Chateau · 68 Rue Jean-Jacques Rousseau, 1st · ~€80pp · book ahead</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Bread Baking Class at La Cuisine Paris</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">La Cuisine Paris (lacuisineparis.com) runs a French bread and viennoiserie class that's entirely plant-based friendly — baguettes, fougasse, croissants. It's a 3-hour class taught in English with professional instruction and small groups. You eat what you make. The smell alone is worth it. Walk out carrying a paper bag of your own baguettes through Paris and tell me that doesn't feel perfect.</div><div class="dn-meta">📍 lacuisineparis.com · 80 Quai de l'Hôtel de Ville, 4th · ~€110pp · 3 hours</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Cocktail-Making Masterclass</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Café du Marché or Shaker (Paris mixology school) runs couple-friendly cocktail workshops — 2 hours, you make 3–4 classic and modern cocktails, learn technique, and drink what you build. It's casual and fun, not a bar exam. Then go out and order your drinks confidently for the rest of the trip. Book through the school directly or via Airbnb Experiences (search "Paris cocktail class").</div><div class="dn-meta">📍 Airbnb Experiences or Shaker · 1st–3rd arr · ~€70–90pp · 2 hours</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Salsa &amp; Latin Dance Class in Pigalle</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">SoPi (South Pigalle) has several Latin dance studios that run drop-in beginner classes on weeknights — salsa, bachata, kizomba. Studio Univers Salsa (9th arr) is one of the best and friendliest for beginners. Classes run 1.5 hours, then the floor opens for social dancing. Even if you're terrible, which is the point, it's a guaranteed good time. Dinner at a Pigalle bistro before, dancing after.</div><div class="dn-meta">📍 South Pigalle area · 9th arr · ~€15pp drop-in · weeknight classes from 8pm</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Photography Walk — Give Each Other a Theme</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Each of you picks a secret theme ("doors," "reflections," "people reading," "anything green") and spend two hours shooting Paris on your phones without telling the other what your theme is. Meet back at a café, order wine, and show each other your shots. Guess the theme. It's a genuinely fun game that makes you look at the city differently and gives you 200 photos you'll actually keep. Best done on a weekday when the streets are less tourist-crowded.</div><div class="dn-meta">📍 Any neighborhood · free · just your phone · best in Marais or Saint-Germain</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Bike Ride Along the Canal Saint-Martin</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Rent bikes from Vélib' (Paris's bike share — use the app) or a shop near République and ride up the Canal Saint-Martin to Parc de la Villette and back. The canal is one of Paris's loveliest and most underrated areas — iron footbridges, tree-lined towpaths, cool neighborhood restaurants and cafés on every block. Stop for coffee, stop for a drink, stop when you feel like it. Best on a Sunday morning when the canal towpaths are closed to cars.</div><div class="dn-meta">📍 Canal Saint-Martin · 10th–19th arr · Vélib' bikes ~€5/day · 8–12km loop</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Flower Arranging Workshop</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Au Nom de la Rose and several Marais florists run 2-hour floral arranging ateliers — you pick your stems from the market, learn wire and structure, and build your own arrangement to take home. The flower market at Île de la Cité is steps from Megi's neighborhood, so combine it: buy loose stems there in the morning, then take a workshop in the afternoon. You each build a bouquet. She keeps hers.</div><div class="dn-meta">📍 Île de la Cité flower market + Marais workshops · Saturdays · ~€50–70pp</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Life Drawing Class in a Montmartre Studio</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Montmartre has been an artist's neighborhood since the 1880s and several studios still run life drawing evenings — open sessions with a model, charcoal and paper provided. No skill required; the instruction is minimal and the vibe is serious-but-welcoming. Check Meetup.com (search "Paris life drawing") or the GRAV collective for drop-in sessions. Good red wine from a nearby cave, a Tuesday evening, a pad of newsprint. Very Paris.</div><div class="dn-meta">📍 Montmartre · 18th arr · Meetup.com for sessions · ~€15pp drop-in</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Morning Yoga in the Tuileries</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">In summer, free yoga and fitness classes run in the Tuileries Garden on Tuesday and Thursday mornings (8–9am). Show up, grab a mat from the instructor or bring your own, and do an hour of yoga with the Louvre pyramid over your right shoulder and the Eiffel Tower over your left. Then walk to Café Kitsune (in the garden) for the best coffee in that part of Paris. Perfect slow morning before a big day.</div><div class="dn-meta">📍 Jardin des Tuileries · 1st arr · free · Tue &amp; Thu 8am in summer</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Rent a Rowboat in Bois de Vincennes</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Take the Métro Line 1 to Château de Vincennes and rent a rowboat on Lac Daumesnil — Paris's largest lake, inside a massive forested park with a medieval château on the edge. Row out to the island in the middle, tie up, sit on the grass. Bring a picnic: natural wine, bread, hummus, fruit. You'll feel like you left the city entirely. Rowboats are €14/hour, no skill required. The boathouse opens at 10am.</div><div class="dn-meta">📍 Lac Daumesnil, Bois de Vincennes · Métro Line 1 · €14/hr · open daily</div></div>
+        </details>
+
       </div>
     </div>
 
-    <!-- DATE NIGHT 2 -->
-    <div style="background:#fff;border:1px solid #ddd;border-left:4px solid #c9a84c;border-radius:0 10px 10px 0;padding:24px 28px;margin-bottom:20px;">
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
-        <div style="background:#c9a84c;color:#fff;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:4px;white-space:nowrap;">Date Night 2</div>
-        <div style="font-family:'Playfair Display',serif;font-size:20px;color:#1a2e4a;font-weight:600;">Painting Class + Vegan Dinner + Seine Walk</div>
-      </div>
-      <div style="font-size:13px;color:#888;margin-bottom:14px;">Best mid-week · afternoon into evening</div>
-      <div style="font-size:14px;color:#333;line-height:1.8;margin-bottom:16px;">
-        Book a couples painting or watercolor workshop at <strong>Pauline Fraisse Art &amp; Culture</strong> (paulinefraisse.com) — she teaches in English and French, small groups of 3–6, classic Paris atelier setting. Sessions are 2–3 hours. Then walk to dinner at <strong>The Friendly Kitchen</strong> (11th arr) — widely considered the most beautiful vegan restaurant in Paris, cozy and intimate, exceptional plant-based cooking. After dinner, walk back to the island along the Seine — the Quai de la Tournelle facing Notre-Dame at night is one of the most beautiful views in the city.
-      </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <div style="background:#fffbee;border:1px solid #e8d28a;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#1a2e4a;">🎨 Activity</strong><br>Pauline Fraisse Atelier · English-language · paulinefraisse.com
-        </div>
-        <div style="background:#fffbee;border:1px solid #e8d28a;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#1a2e4a;">🍽 Dinner</strong><br>The Friendly Kitchen · 11th arr · 100% vegan · book ahead
-        </div>
-        <div style="background:#fffbee;border:1px solid #e8d28a;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#1a2e4a;">🌙 After</strong><br>Quai de la Tournelle at night · Notre-Dame lit up across the water
-        </div>
+    <!-- ── CATEGORY 2: Eating & Drinking ── -->
+    <div class="dn-category">
+      <div class="dn-cat-label">🍷 Eating &amp; Drinking</div>
+      <div class="dn-grid">
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Little Red Door — The World's 50 Best Bar</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">60 Rue Charlot, 3rd arr. Walk-in only, no reservations. Arrive before 8pm or after 10:30pm to avoid the worst of the queue. Nine appearances on the World's 50 Best Bars list. Seasonal menu built around locally sourced ingredients and a kitchen philosophy applied to cocktails. The room is small, intimate, and beautiful — exposed stone, candlelight, servers who know what they're talking about. This is the best cocktail bar in Paris and one of the best in the world. Do not skip it.</div><div class="dn-meta">📍 60 Rue Charlot, 3rd · walk-in · open until 2–3am · ~€18pp per cocktail</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Le Potager de Charlotte — Romantic Vegan Bistronomy</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">One of Paris's most acclaimed fully vegan restaurants — upmarket, genuinely romantic atmosphere, plant-based bistronomy with a serious wine list (many natural wines, vegan-friendly). The food is beautiful: not "healthy food" but actual cuisine. Seasonal menu, impeccable presentation. Book 1–2 weeks ahead. Pair with Little Red Door after for a perfect evening in the Marais.</div><div class="dn-meta">📍 12 Rue Léon Frot, 11th · book via TheFork · ~€60–80pp with wine</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">42 Degrés — First Raw Vegan Bistronomy in France</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">France's first raw organic vegan restaurant. Nothing served above 42°C to preserve nutrients — but this sounds clinical and the food is actually creative and beautiful. Think ceviche of mango, cashew "cheese" boards, fermented sauces, and inventive crudo-style presentations. Megi will love this. The room is elegant and the experience is genuinely surprising. Book ahead. Afterward: Palais Royal gardens at night, 5 minutes away.</div><div class="dn-meta">📍 109 Rue du Temple, 3rd · book ahead · ~€50–70pp · open Tue–Sat</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">The Friendly Kitchen — Most Beautiful Vegan Restaurant in Paris</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Widely considered the most beautiful vegan restaurant in Paris — the room is cozy, warm, candle-lit, intimate. The kitchen is genuinely exceptional: plant-based cooking without the earnestness, just good food in a beautiful setting. The menu changes seasonally, portions are generous, the natural wine list is carefully chosen. Book at least 10 days ahead. This is the one to bring her to on a night when you want everything to be right.</div><div class="dn-meta">📍 2 Rue Eugène Varlin, 10th · book ahead via TheFork · ~€55–75pp</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Candelaria — Hidden Speakeasy Behind a Taqueria</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">52 Rue de Saintonge, 3rd. Walk in, get excellent Mexican tacos at the counter (several vegan options), then ask for the back. A door opens into one of Paris's best cocktail bars — small, dark, exceptional mezcal and agave-forward cocktails. The contrast between the casual taqueria and the serious bar behind it is exactly the kind of thing Paris does better than anywhere. Go early (before 9pm) or late (after 11pm). No reservations for the bar.</div><div class="dn-meta">📍 52 Rue de Saintonge, 3rd · taqueria from 7pm · bar behind · walk-in</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Le Baron Rouge — Wine by the Barrel</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">1 Rue Théophile Roussel, 12th, next to Marché d'Aligre. A Paris institution — bring your own container and fill it from the barrels, or drink standing at the bar. Cash only. Open Sunday mornings after the market. The room is small, crowded, and wonderful — locals with their dogs, barrels of Burgundy and Bordeaux stacked to the ceiling, the best cheap glass of wine in Paris. This is not fancy. It's better than fancy.</div><div class="dn-meta">📍 1 Rue Théophile Roussel, 12th · cash only · ~€3–5/glass · opens 10am Sunday</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Rooftop Cocktails at Perruche (Printemps)</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">The rooftop restaurant/bar of the Printemps Haussmann department store (9th arr) has a wraparound terrace with 360-degree views of Paris — Sacré-Cœur to the north, Eiffel Tower to the southwest, the entire city laid out at sunset. Go for the 8pm hour as the light goes golden, order a Spritz, and just stand there. Cocktails are €18–22. No reservation needed for drinks (dinner is separate and bookable). One of the best views in Paris accessible without a hotel room.</div><div class="dn-meta">📍 Printemps Haussmann · Bd Haussmann, 9th · cocktails ~€20 · no res for drinks</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Natural Wine Bar Crawl — Marais to Oberkampf</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Paris has an extraordinary natural wine scene. Build a 3-bar evening starting at Aux Deux Amis (45 Rue Oberkampf) — a legendary small plates and natural wine spot — then to Septime La Cave (3 Rue Basfroi, 11th) for a bottle from their outstanding list, then finish at Racines 2 (39 Rue de l'Arbre Sec, 1st) for a final glass. Walk between them (20 min total). You'll taste styles from Loire to Jura to Burgundy and eat well the whole time.</div><div class="dn-meta">📍 11th to 1st arr · 3 stops · ~€60–80pp total · best Tuesday–Thursday</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Champagne Bar at Hôtel Particulier Montmartre</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Hidden inside an 18th-century private mansion in Montmartre — you enter through a gate on Avenue Junot, walk through a garden, and arrive at an intimate bar that serves excellent Champagne by the glass and small plates. The setting is extraordinary: a candlelit mansion garden in Montmartre in summer. Go at 9pm as the city quiets. Dress nicely. This is the rare Paris place that actually lives up to its setting.</div><div class="dn-meta">📍 23 Ave Junot, 18th · bar open evenings · Champagne ~€20/glass · jackets welcome</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Berthillon Ice Cream Walk on the Island</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">31 Rue Saint-Louis en l'Île — the original Berthillon, Paris's most famous ice cream. The sorbets are vegan: cassis, raspberry, mango, pear, lemon, passion fruit. Get two scoops, walk the island's main street, then find the steps on the Quai d'Anjou facing the river and sit. That's it. In June the evenings are warm and long. Sometimes the simplest thing is the best thing.</div><div class="dn-meta">📍 31 Rue Saint-Louis en l'Île, 4th · closed Mon &amp; Tue · sorbets are vegan · ~€4</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Cheese &amp; Wine Tasting at Androuet</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Androuet (androuet.com) is one of Paris's finest fromageries and runs guided cheese &amp; wine tasting experiences — 1.5 hours, 5–6 cheeses from different regions, paired wines, explained by a maître fromager. It's educational but not stuffy. Megi can participate fully at any level she's comfortable (the wines are vegan-friendly, and she can skip whatever cheese she wants). Book online. You'll never buy supermarket cheese again afterward.</div><div class="dn-meta">📍 Multiple locations · main: 37 Rue de Verneuil, 7th · ~€55pp · book at androuet.com</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Absinthe Tasting at a Belle Époque Bar</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">La Fée Verte (8 Rue de la Roquette, 11th) is the Paris temple of absinthe — named after the Green Fairy. They carry 50+ absinthes, serve it properly (with the drip, the sugar cube, the spoon), and the atmosphere is 1890s Belle Époque. If absinthe isn't your thing, they do exceptional pastis and other anise-forward spirits. The art nouveau room and the ritual of the pour is the event. Absinthes run €9–15. No reservation needed.</div><div class="dn-meta">📍 8 Rue de la Roquette, 11th · no res · open from 6pm · ~€10–15/glass</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Late-Night Ramen + Sake Bar in Pigalle</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Paris's Japanese restaurant scene is genuinely excellent — Pigalle and the 9th arrondissement have a dense cluster of ramen shops, izakayas, and sake bars. Kodawari Ramen (37 Rue Mazarine, 6th) does a stunning vegan shoyu ramen with no-chicken broth and all plant-based toppings. Follow with sake at Derrière or a nearby Japanese whisky bar. Better late-night food than most of Paris's French options.</div><div class="dn-meta">📍 Kodawari Ramen · 37 Rue Mazarine, 6th · vegan ramen available · ~€20pp</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Sunrise Breakfast Picnic</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">In June, Paris sunrise is around 5:45am. The city is silent. Set an alarm for 5am, grab croissants from a 24-hour boulangerie (or buy the night before), make coffee, and walk to the tip of Île Saint-Louis — the very western point of the island, below Pont Saint-Louis. Watch the city wake up with Notre-Dame on your left and the city skyline ahead. This costs nothing and is one of those things you'll remember for years.</div><div class="dn-meta">📍 Western tip of Île Saint-Louis · sunrise ~5:45am in June · free · croissants only</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Dinner at Septime — Paris's Best Restaurant</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">80 Rue de Charonne, 11th. Consistently one of the top 10 restaurants in the world. Market-driven, seasonal, inventive French cuisine. The chef accommodates plant-based eating exceptionally well — call ahead and ask for a vegetable-forward tasting menu and they'll build one. Reservations open 30 days in advance at exactly noon — set an alarm and book the moment you can. This is a special occasion restaurant. Worth every effort.</div><div class="dn-meta">📍 80 Rue de Charonne, 11th · reservations essential · book 30 days out at noon · ~€90pp</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">VG Pâtisserie Tasting — Paris's Best Vegan Pastry</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">VG Pâtisserie (vgpatisserie.com) is the city's premier vegan pâtisserie — proper laminated croissants, eclairs, tarts, and millefeuille. Nothing tastes like a compromise. Go for a mid-afternoon tasting session: order five different things, a coffee, and sit. Compare notes on what you ordered. Add Cloud Cakes (2nd arr) and Jo &amp; Nana Cakes to the route for a full vegan pastry tour of Paris. Budget one afternoon just for this.</div><div class="dn-meta">📍 VG Pâtisserie · multiple locations · ~€30–40 for a full tasting · afternoon activity</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Wine &amp; Jazz at Autour d'un Verre</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">116 Rue de Richelieu, 2nd — a relaxed wine bar that doubles as a jazz venue on weekend nights. The wine list skews natural and Burgundian, small food plates, live jazz from 9pm Friday and Saturday. The room is low-key and intimate — not a performance venue with fixed seating, more like a bar where musicians happen to be playing. Great wine, real jazz, low pretension. Exactly the kind of place that's hard to find and easy to love.</div><div class="dn-meta">📍 116 Rue de Richelieu, 2nd · jazz Fri &amp; Sat from 9pm · no res for bar · ~€40–60pp</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Dinner at Le Sergent Recruteur — Île Saint-Louis</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">41 Rue Saint-Louis en l'Île — steps from where Megi lives. A beautiful, elegant restaurant in a medieval vaulted cellar with a tasting menu that the kitchen adjusts for plant-based dining if asked. This is the best restaurant on the island — proper bistronomy, serious wine, a room that makes you feel like you're inside 17th-century Paris. Book 2–3 weeks ahead. Going here means you walk home from dinner in 2 minutes.</div><div class="dn-meta">📍 41 Rue Saint-Louis en l'Île, 4th · book ahead · tasting menu ~€75–100pp</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Afternoon at Café de Flore with Books</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">172 Boulevard Saint-Germain, 6th. One of Paris's two great literary cafés (Les Deux Magots is across the street). Go on a Tuesday or Wednesday afternoon, not a weekend. Get a corner table on the terrace, order a café crème and a citron pressé, bring a book each, and just sit for two hours. Simone de Beauvoir wrote here. Jean-Paul Sartre wrote here. The city outside keeps moving. You don't have to.</div><div class="dn-meta">📍 172 Blvd Saint-Germain, 6th · terrace · ~€15pp for drinks · go weekday afternoon</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Build a Market Picnic — Best Ingredients in Paris</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Hit three spots on the same morning: the Marché d'Aligre (12th) for vegetables and fruit, Androuet fromagerie for one perfect cheese (Megi skips or tastes at her call), and a good cave à vins for a bottle of natural white or rosé. Assemble at the Quai de Béthune on the south side of Île Saint-Louis, facing the river. Spread a blanket, open the wine. The whole exercise costs under €40 and is the best lunch in Paris.</div><div class="dn-meta">📍 Marché d'Aligre + Île Saint-Louis · Tuesday–Sunday mornings · ~€35–50 total</div></div>
+        </details>
+
       </div>
     </div>
 
-    <!-- DATE NIGHT 3 -->
-    <div style="background:#fff;border:1px solid #ddd;border-left:4px solid #0057a8;border-radius:0 10px 10px 0;padding:24px 28px;margin-bottom:20px;">
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
-        <div style="background:#0057a8;color:#fff;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:4px;white-space:nowrap;">Date Night 3</div>
-        <div style="font-family:'Playfair Display',serif;font-size:20px;color:#1a2e4a;font-weight:600;">Sunset Picnic on the Seine + Jazz Cave</div>
-      </div>
-      <div style="font-size:13px;color:#888;margin-bottom:14px;">Best on a warm evening · the island to the Latin Quarter</div>
-      <div style="font-size:14px;color:#333;line-height:1.8;margin-bottom:16px;">
-        Assemble a vegan picnic: grab pastries from <strong>VG Pâtisserie</strong> or <strong>Cloud Cakes</strong>, pick up hummus, olives, fresh bread, fruit, and a bottle of natural wine from a local épicerie. Take it to the steps on <strong>Quai d'Anjou</strong> (north side of Île Saint-Louis) or the Pont de la Tournelle and watch the sun go down over the city — in June you're looking at a 9:45 pm golden hour. Then walk five minutes to <strong>Le Caveau de la Huchette</strong> (5 rue de la Huchette, 5th) — a 1940s jazz club under vaulted stone, doors at 8 pm, €15–20 entry. Louis Armstrong played here. Dance if you want to.
-      </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <div style="background:#eef4ff;border:1px solid #a8c4e8;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#0057a8;">🧺 Picnic</strong><br>VG Pâtisserie + natural wine + Quai d'Anjou at golden hour
-        </div>
-        <div style="background:#eef4ff;border:1px solid #a8c4e8;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#0057a8;">🎷 Night</strong><br>Le Caveau de la Huchette · 5 rue de la Huchette · 8 pm
-        </div>
-        <div style="background:#eef4ff;border:1px solid #a8c4e8;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#0057a8;">💃 Bonus</strong><br>Dance floor in the cave · Latin jazz · walk home in 5 min
-        </div>
+    <!-- ── CATEGORY 3: Walking & Wandering ── -->
+    <div class="dn-category">
+      <div class="dn-cat-label">👟 Walking &amp; Wandering</div>
+      <div class="dn-grid">
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Golden Hour Walk Around Notre-Dame</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">With Notre-Dame's exterior restoration complete by 2026, this is the right trip to see it properly. Go at 8:30–9pm when the light is long and golden. Walk the full circumference of the cathedral — the apse from Pont de l'Archevêché, the south portal, the rose window, the north façade. Then cross to the island and walk back along Quai d'Anjou. The rebuilt spire at golden hour is going to be something.</div><div class="dn-meta">📍 Île de la Cité · free · best 8:30–9:30pm in June · 45-minute walk</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">The Passages Couverts — 19th-Century Glass Arcades</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Paris has 20+ covered passages from the 1820s–1860s — glass-roofed iron arcades that predate department stores. The finest are Galerie Vivienne (2nd), Passage des Panoramas (2nd), and Galerie Véro-Dodat (1st). Spend an afternoon drifting through them: antique print shops, coin dealers, old-fashioned toy stores, stamp collectors, and the best stamp-and-coin dealers in France. Each passage has its own character. They close at 7–8pm so go afternoon.</div><div class="dn-meta">📍 2nd arr mainly · free entry · open daily until 7–8pm · 2-hour wander</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Promenade Plantée — Elevated Rail Trail</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Paris's original High Line (built 30 years before New York's) — a 4.7km elevated walkway along a disused 19th-century rail viaduct from Bastille to Bois de Vincennes. The arches below are art galleries and craft workshops. The elevated path is planted with roses and lavender and irises. In June it's in full bloom and essentially empty by 6pm. Start at Bastille, walk east, come back down through the Marais.</div><div class="dn-meta">📍 Bastille, 12th arr · free · 4.7km elevated · best in morning or late afternoon</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Montmartre's Hidden Stairways &amp; Vineyards</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Most tourists walk straight up the main tourist path to Sacré-Cœur. Instead: from Abbesses Métro, take Rue Lepic, then cut east through the vineyard path (Clos Montmartre), past Salvador Dalí's house, through the hidden garden of la Bonne Franquette, and up the back stairs to the top. You'll see nobody. The vineyard has been here since 1933 and produces real wine. Then catch the city view at 9:30pm. Walk back down through the charming streets of Abbesses.</div><div class="dn-meta">📍 18th arr · start at Abbesses Métro · 2-hour wander · free · evening is best</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Walk Every Bridge on the Seine — Make a Wish Game</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">There are 37 bridges across the Seine through Paris. The inner stretch from Pont d'Iéna to Pont de Bercy has about 20 — walkable in 3 hours. The game: at each bridge you each make a wish (silently or aloud, your call). The rule: the wish has to be different at each bridge. Start at Pont d'Iéna under the Eiffel Tower and walk east. Stop for wine at any point when you feel like it. This is a good way to see Paris at street level without a plan.</div><div class="dn-meta">📍 Pont d'Iéna east · 3–4 hours · free · best started at 6pm</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Belleville Street Art Walk</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Belleville (20th arr) is Paris's most concentrated street art neighborhood — murals on every surface, commissioned works from international artists, independent galleries in old workshops. Start at Couronnes Métro and walk north up Boulevard de Belleville, turning into the side streets. The Cour Damoye (Bastille side) and the Oberkampf corridor have the best concentration. Follow it with dinner at one of the Vietnamese or Chinese restaurants on the boulevard — Belleville is also Paris's best Asian food neighborhood.</div><div class="dn-meta">📍 20th arr · Couronnes Métro · 2-hour walk · free · go afternoon or evening</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Père Lachaise at Golden Hour</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Paris's most famous cemetery is also one of its most beautiful parks — 44 hectares of winding cobblestone paths, elaborate 19th-century monuments, enormous old trees, and the graves of Jim Morrison, Oscar Wilde, Édith Piaf, Marcel Proust, Frédéric Chopin. Go at 5–6pm on a weekday: quiet, golden light filtering through the trees, cats sleeping on tombstones. Oscar Wilde's grave has been re-glassed (people used to kiss it lipstick-covered). Hauntingly beautiful and not morbid at all.</div><div class="dn-meta">📍 20th arr · Père Lachaise Métro · free · closes at 6pm · go 4–6pm</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Latin Quarter's Medieval Streets at Night</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">The 5th and 6th arrondissements at night are completely different from daytime. Start at Place Maubert, walk up Rue de la Montagne Sainte-Geneviève past the 6th-century origins of Paris, through Rue Mouffetard (oldest market street in Paris, still cobbled), around the Panthéon, through the back streets to Boulevard Saint-Germain. Stop at a terrace for wine. These streets are basically unchanged since the Middle Ages. Best done 9–11pm when tourists are gone and the locals are out.</div><div class="dn-meta">📍 5th–6th arr · Place Maubert Métro · 2-hour walk · best 9–11pm</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Canal Saint-Martin at Dusk</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">The Canal Saint-Martin (10th arr) is Paris's coolest neighborhood waterway — iron footbridges, plane trees, locks, and the most atmospheric evening light in the city. Walk from République north toward Jaurès as the sun goes down (around 9:45pm in June). Stop at any of the dozens of restaurants and bars along the canal — Chez Prune, Du Pain et des Idées (get their pistachio-chocolate croissant earlier in the day), or one of the outdoor terrace restaurants. The whole area feels like a village inside the city.</div><div class="dn-meta">📍 10th arr · République Métro · 2km canal walk · best 8–10pm in summer</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Butte-aux-Cailles — The Hidden Village</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">In the 13th arrondissement, below Place d'Italie, is a neighborhood that almost no tourist visits — cobblestone streets, low houses, a village square, street art, and independent bars that feel like someone's living room. The Butte-aux-Cailles has been a working-class and bohemian neighborhood since the 19th century. Walk through at 8pm, stop at La Folie en Tête (bar, bookshop, music) or Les Cailloux (Italian). You'll think you found a secret, and you basically did.</div><div class="dn-meta">📍 13th arr · Corvisart Métro · free · evening walk · 1.5 hours</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Night Walk to See Paris Illuminated</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Paris lights its monuments at night from dusk to 1am. Plan a route: start at Trocadéro (Eiffel Tower view), walk across Pont d'Iéna to the tower base, then east along the Seine (Pont Alexandre III, Grand Palais) toward Notre-Dame, over to the islands and home. The Eiffel Tower sparkles for 5 minutes every hour on the hour until 1am. Position yourself on Pont d'Iéna or Pont de Bir-Hakeim for the sparkle at midnight — it's impossible not to be moved by it.</div><div class="dn-meta">📍 Trocadéro to Île Saint-Louis · 5km walk · sparkle on the hour · best at midnight</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Explore the 7th — Bourgeois Paris at Its Finest</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">The 7th arrondissement is the quietest, grandest, most beautiful residential neighborhood in Paris. Walk: from Musée Rodin's sculpture garden through the quiet streets of the Invalides, down Rue Saint-Dominique (the best street market in Paris), through the Champ de Mars, back past the Eiffel Tower. The 7th has no tourist attractions except the Rodin and the tower — it's just beautiful streets, well-dressed Parisians, and the best bread shops in the city. Walk it at 6pm.</div><div class="dn-meta">📍 7th arr · Varenne Métro · 2–3 hour walk · free · beautiful any time of day</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Saint-Germain Book Shopping at Shakespeare &amp; Co</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">37 Rue de la Bûcherie, 5th — the most famous English-language bookshop in the world, directly across from Notre-Dame. Go in the late afternoon, give yourselves 45 minutes each to find one book for the other person — pick it based on what you know about them, or what you think they need. Pay for each other's book. Walk out, sit on the quai across from Notre-Dame, and read the first page of the book you were given. Hemingway would approve.</div><div class="dn-meta">📍 37 Rue de la Bûcherie, 5th · free entry · open daily until 10pm · ~€15/book</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Sunrise Walk to the Tip of Île de la Cité</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">The very western point of Île de la Cité — Square du Vert-Galant — is a triangular garden at water level beneath the Pont Neuf. At 5:45am in June you'll be completely alone there. The city is waking up. The river is silver. Bring two cups of coffee from a 24-hour café on the Île Saint-Louis. The Vert-Galant at dawn feels like standing at the prow of a ship sailing through Paris. One of those things you do once and never forget.</div><div class="dn-meta">📍 Square du Vert-Galant · western tip of Île de la Cité · free · go at 5:30am in June</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Palais Royal Gardens at Night</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">The Palais Royal (1st arr) is one of the most beautiful spaces in Paris and almost nobody is there after 9pm. The long colonnade gardens, the 18th-century arcades, Daniel Buren's striped columns in the courtyard (iconic Paris art), the quiet central fountain, the restaurants tucked into the arcade. In June you can sit in the garden until the closing bell at 11pm. Walk in from the Rue de Rivoli entrance. Have champagne from the café Le Grand Véfour and pretend this is normal life.</div><div class="dn-meta">📍 Palais Royal gardens · 1st arr · free · open until 11pm in summer</div></div>
+        </details>
+
       </div>
     </div>
 
-    <!-- DATE NIGHT 4 -->
-    <div style="background:#fff;border:1px solid #ddd;border-left:4px solid #16a34a;border-radius:0 10px 10px 0;padding:24px 28px;margin-bottom:20px;">
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
-        <div style="background:#16a34a;color:#fff;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:4px;white-space:nowrap;">Date Night 4</div>
-        <div style="font-family:'Playfair Display',serif;font-size:20px;color:#1a2e4a;font-weight:600;">Montmartre at Sunset + Vegan Pastries + Night Walk</div>
-      </div>
-      <div style="font-size:13px;color:#888;margin-bottom:14px;">Best on a clear evening · 18th arr into the night</div>
-      <div style="font-size:14px;color:#333;line-height:1.8;margin-bottom:16px;">
-        Head to Montmartre in the late afternoon (5–6 pm). Walk up via rue Lepic, stop at <strong>Boneshaker Donuts</strong> (77 rue d'Aboukir, 2nd — or find the nearest location) for vegan donuts to eat while walking. Catch the sunset from the <strong>steps of Sacré-Cœur</strong> — in early June the sun sets around 9:45 pm and the view over Paris goes golden. The whole city at your feet. Head down through Montmartre's backstreets afterward (rue Lepic, rue des Abbesses) and stop at a terrace bar for a natural wine before heading home.
-      </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#16a34a;">🍩 Sweet</strong><br>Boneshaker Donuts · fully vegan · best donuts in Paris
-        </div>
-        <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#16a34a;">🌅 Moment</strong><br>Sacré-Cœur steps at 9:30 pm · Paris going gold below you
-        </div>
-        <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#16a34a;">🍷 Nightcap</strong><br>Terrace wine bar in Abbesses or Pigalle before heading home
-        </div>
+    <!-- ── CATEGORY 4: Romantic ── -->
+    <div class="dn-category">
+      <div class="dn-cat-label">💜 Romantic</div>
+      <div class="dn-grid">
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Vedettes du Pont Neuf — Private Evening Boat Cruise</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">A 1-hour guided boat cruise through central Paris on a small, open boat — better than Bateaux Mouches, which are floating tourist buses. Vedettes du Pont Neuf departs from Square du Vert-Galant (the western tip of Île de la Cité) — steps from Megi's neighborhood. Book the 9:30pm departure in June so you're on the water during golden hour. Drift past Notre-Dame, Musée d'Orsay, the Grand Palais, and under 10 bridges. €16pp, no need for fancy upgrades.</div><div class="dn-meta">📍 Square du Vert-Galant · 4th · vedettesdupontneuf.com · 9:30pm departure · €16pp</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Classical Concert Inside Sainte-Chapelle</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Sainte-Chapelle (4 Boulevard du Palais, 4th) is a 13th-century Gothic chapel whose upper nave is entirely made of stained glass — 1,113 panels of it, 15 windows, 50 feet high. Evening chamber music concerts run here year-round: Vivaldi Four Seasons, Mozart, Handel. Book tickets at classictic.com or billetréduc.com. Concerts run 60–75 minutes, no intermission. Sitting inside that room as music echoes through the glass is genuinely overwhelming. ~€35pp.</div><div class="dn-meta">📍 4 Blvd du Palais, 4th · classictic.com · ~€35pp · evenings year-round</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Eiffel Tower Midnight Sparkle from Pont d'Iéna</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Position yourselves on Pont d'Iéna (or Pont de Bir-Hakeim, slightly further for a more dramatic angle) before midnight. The Eiffel Tower sparkles for 5 minutes on the hour, every hour, until 1am. At midnight, with the whole city behind you and the river below you, the sparkle is something else. It's 20,000 lightbulbs. Get there 10 minutes early. Bring a glass of wine in a to-go cup from a nearby café. This is the quintessential Paris moment and it still works.</div><div class="dn-meta">📍 Pont d'Iéna or Pont de Bir-Hakeim · free · sparkle at midnight · plan to arrive 11:50pm</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Musée Rodin at Dusk — Sculpture Garden</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">The Musée Rodin (77 Rue de Varenne, 7th) has one of the most beautiful garden museums in Europe — The Thinker in the courtyard, The Gates of Hell at the back, The Burghers of Calais on the lawn. The garden closes at 6:30pm but admission is €7 (or €1 for the garden alone). Go at 5pm on a Friday: the late afternoon light on the bronze sculptures is extraordinary and there are almost no visitors. Then walk the 7th arrondissement as Paris starts its evening.</div><div class="dn-meta">📍 77 Rue de Varenne, 7th · €13 museum, €4 garden only · Tue–Sun · close 6:30pm</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Write Letters to Each Other — Open in a Year</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Sit together, separately write a letter to the other person about right now — this trip, this city, what you notice about them, what you feel. Seal the envelopes. Don't read each other's. Either carry them home and open them on a date 12 months from now, or find a local post office (La Poste) and mail them to yourselves care of a friend who'll hold them until the date. A simple thing that becomes significant.</div><div class="dn-meta">📍 Any café · paper + pen + envelopes · free · agree on an opening date before you seal</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Rooftop View at Institut du Monde Arabe</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">The Institut du Monde Arabe (1 Rue des Fossés Saint-Bernard, 5th) has an extraordinary rooftop terrace restaurant — Le Zyriab — with a 180-degree view over the Seine, Notre-Dame, and the Île Saint-Louis. The kitchen serves Lebanese and North African food with strong vegetarian and vegan options. Best at 8pm. Reserve a window table ahead. The view from this angle — across the river to the islands — is one you won't have seen in any Paris guidebook photo.</div><div class="dn-meta">📍 1 Rue des Fossés Saint-Bernard, 5th · reservations · Lebanese/North African · ~€60pp</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Private Picnic on Champ de Mars — Eiffel Tower at Night</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">The grass of Champ de Mars facing the Eiffel Tower is filled with people all evening in summer — tourists and Parisians both, drinking wine, having picnics, watching the tower. Join them. Build a spread: grab wine from Nicolas, bread from a boulangerie, vegan spread or hummus, fruit. Spread a blanket at the central axis and face the tower. The first sparkle after 10pm is at 10pm exactly. Stay for the midnight one. Paris does not do this better anywhere else.</div><div class="dn-meta">📍 Champ de Mars, 7th · free · supplies ~€30 · sparkling on the hour · warm in June</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Afternoon Tea at Angelina's</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">226 Rue de Rivoli, 1st — the Tuileries gardens on one side, Paris on the other. Angelina's is famous for its African hot chocolate (the richest, thickest, most serious hot chocolate in the world) and its Mont-Blanc pastry. The interior is 1903 Belle Époque — painted ceilings, gilt mirrors, marble tables. Go on a rainy afternoon or just because. The sorbet options are vegan; most pastries aren't but a few are (ask the server). A 90-minute sit here will reset your whole day.</div><div class="dn-meta">📍 226 Rue de Rivoli, 1st · expect a short queue · ~€25pp for tea + pastry</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Book a Suite at Hôtel du Jeu de Paume — on the Island</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">54 Rue Saint-Louis en l'Île — the best hotel on Île Saint-Louis, in a 17th-century royal tennis court (jeu de paume). The suites are extraordinary: exposed timber, stone walls, river views, a private courtyard. If you're staying here June 3–12 anyway (as recommended), upgrade to the suite category for one night. Order Berthillon sorbet room service from across the street. This is not extravagant — this is the whole point of being in Paris.</div><div class="dn-meta">📍 54 Rue Saint-Louis en l'Île, 4th · jeudepaumehotel.com · suites from ~€450/night</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">See a Film at MK2 Quai de Seine — Floating Cinema</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">MK2 Quai de Seine (14 Quai de la Seine, 19th) is a cinema complex on both banks of the canal, connected by a small boat. The boat is free for ticket holders. In summer they run rooftop open-air screenings. Even for a regular film — check what's showing, the French screen everything in VO (version originale with subtitles) — the experience of taking a little canal boat to see a movie and then sitting on the canal afterward is genuinely lovely.</div><div class="dn-meta">📍 14 Quai de la Seine, 19th · mk2.com · ~€12pp · rooftop screenings in summer</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Sunrise at the Sacré-Cœur Steps</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Take the Métro at 5am to Abbesses and walk up to Sacré-Cœur for the 5:45am sunrise. The entire city of Paris turns pink and then gold below you. You'll be alone or nearly so. The basilica itself opens at 6am. This requires willingness to lose one night of sleep, which is absolutely worth it. Bring coffee in a thermos, a blanket, and something to eat. The climb down through the waking neighborhood afterward — boulangeries opening, street sweepers, first café chairs going out — is its own reward.</div><div class="dn-meta">📍 Sacré-Cœur steps, 18th · sunrise 5:45am in June · Abbesses Métro · free · bring coffee</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Buy Something Together at the Bouquinistes</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">The bouquinistes are the green-box booksellers who've lined the Seine quais since the 16th century — 900 of them, 3km of vintage books, prints, postcards, and posters. Find one thing together: a vintage Paris print, an old book in French even if you can't read it, an antique map of the neighborhood. Spend €15–30. This is your shared object from this trip. Wrap it, carry it home, frame it. The quai between Pont Saint-Michel and Pont de l'Alma has the best selection.</div><div class="dn-meta">📍 Both banks of the Seine · open most days · ~€10–30 for something good · go morning</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Horse-Drawn Carriage in the Bois de Boulogne</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">The Bois de Boulogne (16th arr) has horse-drawn carriage rides available on weekend afternoons — through the wooded paths of Paris's western park, past the lakes, through the allées that have been a Parisian leisure tradition since Napoleon III. This is unabashedly romantic and old-fashioned and worth doing once. Book through the carriage operators at the park entrance near Porte Dauphine. Follow with dinner in the 16th or back in the Marais.</div><div class="dn-meta">📍 Bois de Boulogne, 16th · Porte Dauphine entrance · weekends · ~€45 for 30 min</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Late Night Ice Cream on the Quai</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">This is the simplest one on the list. Get Berthillon sorbet (vegan: cassis, lemon, mango, passion fruit) from the original shop at 31 Rue Saint-Louis en l'Île before it closes at 10pm. Walk to the steps on Quai de Béthune — the southern quai of Île Saint-Louis, below street level, facing the river and the Left Bank. Sit. Eat. Watch the river. This is what you came for. Don't overthink it.</div><div class="dn-meta">📍 Berthillon + Quai de Béthune, 4th · ~€4 · no planning required · any warm night</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Look for Our Swan — Square du Vert-Galant at Dusk</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Square du Vert-Galant is the triangular garden at the very western tip of Île de la Cité — below the Pont Neuf, at water level, the prow of an island sailing through the heart of Paris. In the evenings, swans drift along this stretch of the Seine. The ritual is simple: go at dusk, sit on the stone edge facing the river, and wait for your swan to appear. You'll know it's yours. The Seine funnels here, the current splits around the point, and sometimes a swan comes through alone. If it comes to you — that's the one. This is not a planned activity. It's the kind of thing that either happens or doesn't, and either way you've spent 45 minutes on the most beautiful river perch in Paris as the city goes gold around you.</div><div class="dn-meta">📍 Square du Vert-Galant, western tip of Île de la Cité · free · go at dusk (9pm in June) · bring wine</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Louvre After Hours — Friday Late Night</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">The Louvre opens until 9:45pm on Fridays and Saturdays — crowds thin dramatically after 6pm. Pick one wing only (trying to see the whole Louvre is a mistake). Go to the Richelieu wing (French paintings) or the Denon wing (Italian sculpture, Venus de Milo) and take your time. No queue to see anything. The Winged Victory of Samothrace at the top of the Daru staircase with almost no one around is astonishing. Finish at the Pyramid looking up at the Louvre lit from inside.</div><div class="dn-meta">📍 Louvre · Fri/Sat until 9:45pm · €22pp · arrive at 6pm · one wing only</div></div>
+        </details>
+
       </div>
     </div>
 
-    <!-- DATE NIGHT 5 -->
-    <div style="background:#fff;border:1px solid #ddd;border-left:4px solid #dc2626;border-radius:0 10px 10px 0;padding:24px 28px;margin-bottom:20px;">
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
-        <div style="background:#dc2626;color:#fff;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:4px;white-space:nowrap;">Date Night 5</div>
-        <div style="font-family:'Playfair Display',serif;font-size:20px;color:#1a2e4a;font-weight:600;">Vegan Cooking Class + Dinner You Made Together</div>
-      </div>
-      <div style="font-size:13px;color:#888;margin-bottom:14px;">Best for a slower day · afternoon into evening</div>
-      <div style="font-size:14px;color:#333;line-height:1.8;margin-bottom:16px;">
-        Book a plant-based or vegan-friendly French cooking class together. <strong>La Cuisine Paris</strong> (lacuisineparis.com) offers English-language classes including pastry, bread baking, and seasonal market cooking — call ahead and confirm a vegan-friendly session. Alternatively, <strong>Cook &amp; Go</strong> in the Marais (cookandgo.fr) does fun 1.5-hour quick workshops including macarons, which can easily be made vegan. You cook it, you eat it, you go home with the recipes. Follow with a walk across the island and a nightcap from a local wine bar.
-      </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <div style="background:#fff5f5;border:1px solid #fca5a5;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#dc2626;">👨‍🍳 Class</strong><br>La Cuisine Paris or Cook &amp; Go · English-language · book ahead
-        </div>
-        <div style="background:#fff5f5;border:1px solid #fca5a5;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#dc2626;">🍝 Dinner</strong><br>You made it — eat it together in the class kitchen
-        </div>
-        <div style="background:#fff5f5;border:1px solid #fca5a5;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#dc2626;">🌙 After</strong><br>Île Saint-Louis walk · Berthillon (vegan sorbet options) · quai bench
-        </div>
+    <!-- ── CATEGORY 5: Arts, Music & Culture ── -->
+    <div class="dn-category">
+      <div class="dn-cat-label">🎭 Arts, Music &amp; Culture</div>
+      <div class="dn-grid">
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Jazz at Le Caveau de la Huchette</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">5 Rue de la Huchette, 5th — a jazz club in a 1940s stone vault. Louis Armstrong played here. Doors open at 8pm, €15–20 entry, live jazz from 9:30pm. The vault is low-ceilinged, the dance floor is small and sticky, the bar is cheap, and the musicians are genuinely excellent. It's one of the only places in Paris where you can still swing dance to a live band at midnight. Go after your Seine picnic — it's a 5-minute walk from the river.</div><div class="dn-meta">📍 5 Rue de la Huchette, 5th · €15–20 entry · 8pm doors · dancing until 2am</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">New Morning Jazz Club</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">7-9 Rue des Petites Écuries, 10th — Paris's premier jazz club, serious room, international acts. New Morning has hosted Miles Davis, Chet Baker, Stan Getz. The current programming is strong: African jazz, Afro-Cuban, soul, contemporary jazz. Check their calendar at newmorning.com and book the night that has the best lineup. €20–30pp. Doors at 7:30pm, shows at 8:30pm. The venue is dark and intimate — a proper listening room, not a tourist trap.</div><div class="dn-meta">📍 7-9 Rue des Petites Écuries, 10th · newmorning.com · €20–30pp · book ahead</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Atelier des Lumières — Immersive Art</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">38 Rue Saint-Maur, 11th — a former iron foundry converted into an immersive digital art space where paintings are projected floor to ceiling across vast walls to a curated soundtrack. Current programs change seasonally — past shows: Van Gogh, Klimt, Cézanne. The space is extraordinary: 3,300 sqm of projection surface, 140 video projectors. You walk through the artwork. Tickets are €14–16, book online. Go on a weeknight and arrive 15 minutes before the show starts.</div><div class="dn-meta">📍 38 Rue Saint-Maur, 11th · atelier-lumieres.com · €15pp · book online · 1 hour</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Opera at Palais Garnier — Guided Tour or Evening Show</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Place de l'Opéra, 9th — one of the most opulent buildings in Europe. The 1875 Grand Staircase, the Marc Chagall painted ceiling above the auditorium (Paris's most surprising ceiling), the mirrored Grand Foyer that puts Versailles to shame. If tickets for a performance are too expensive (€30–200), the guided tour alone is worth it — €15, daily, no show required. For a performance: book 6–8 weeks ahead at operadeparis.fr and look for anything in the €50–80 range.</div><div class="dn-meta">📍 Place de l'Opéra, 9th · tour €15 daily · shows operadeparis.fr · book ahead</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Musée de l'Orangerie — Monet's Water Lilies</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Jardin des Tuileries, 1st — a small museum containing two oval rooms purpose-built by Monet to display his Water Lilies triptych. You enter the oval room, sit on the curved bench in the center, and the paintings surround you 360 degrees. They are enormous. The light comes from above through a diffused skylight. This is one of the most significant art experiences in Europe and it's consistently underrated. Book ahead, go on a weekday, and budget 30 minutes just for those two rooms.</div><div class="dn-meta">📍 Jardin des Tuileries, 1st · musee-orangerie.fr · €12.50pp · book ahead</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Crazy Horse Paris — The Classic Cabaret</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">12 Avenue George V, 8th — the more artistic and less tourist-oriented of Paris's two famous cabarets (vs. Moulin Rouge). The Crazy Horse's signature is lighting as performance — dancers are choreographed and lit in ways that turn the human body into abstract sculpture. It's not burlesque exactly; it's closer to contemporary dance with extraordinary production design. Shows run 90 minutes, with dinner and show packages or show-only (from €95). Book at lecrazyhorseparis.com.</div><div class="dn-meta">📍 12 Ave George V, 8th · lecrazyhorseparis.com · show-only from €95pp · book ahead</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Centre Pompidou Evening — Modern Art &amp; Rooftop</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Place Georges-Pompidou, 4th — the great inside-out building of Paris. The permanent collection (floors 4–5) is one of the best modern art museums in the world. Go on Thursday or Friday evenings when it's open until 9pm and crowd-free by 6pm. The escalator up the transparent tubes along the exterior is an experience in itself. The rooftop (restaurant Le Georges on floor 6) has a view over Paris rivaling the Eiffel Tower — book for dinner or just drinks.</div><div class="dn-meta">📍 Place Georges-Pompidou, 4th · €15pp · Thu/Fri until 9pm · rooftop restaurant bookable</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Private Gallery Walk in the Marais</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">The Marais (3rd and 4th arr) has the highest concentration of contemporary art galleries in Paris — most are free entry, most open 11am–7pm Tuesday–Saturday. Walk Rue Vieille du Temple, Rue de Bretagne, and Rue Charlot and pop into every gallery you see. No obligation to buy or know anything. The galleries are competitive with each other and show serious work. Finish at the outdoor space at the Carreau du Temple. Best done on a Saturday afternoon before the market closes.</div><div class="dn-meta">📍 Marais, 3rd–4th arr · free entry · Tue–Sat 11am–7pm · self-guided</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Fondation Louis Vuitton — Building + Collection</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Bois de Boulogne, 16th — Frank Gehry's glass "sail" building is one of the most extraordinary pieces of architecture built in the last 30 years. The collection inside is exceptional: Basquiat, Richter, Koons, and a permanently evolving international program. Go on a Friday evening (open until 9pm) when the building is lit from inside and the Bois de Boulogne is dark around it. Take the shuttle bus from Avenue de Friedland (near Arc de Triomphe) — it's free with a ticket.</div><div class="dn-meta">📍 Bois de Boulogne, 16th · fondationlouisvuitton.fr · €16pp · Fri until 9pm</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Street Performers at Centre Pompidou Plaza</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">The sloped open piazza in front of Pompidou (Place Igor Stravinsky) is one of Paris's great outdoor performance spaces — fire breathers, living statues, acrobats, jazz musicians, spoken word. It's best on weekend evenings (7–9pm) when the whole neighborhood is out. Completely free. Follow with a drink at one of the Marais bars nearby. The Stravinsky Fountain (Niki de Saint Phalle sculptures, colored water jets) is right there. A good low-key night when you don't want to plan anything.</div><div class="dn-meta">📍 Place Pompidou, 4th · free · Fri/Sat/Sun evenings from 7pm · no plan needed</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Musée d'Orsay — Impressionism on the Seine</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">1 Rue de la Légion d'Honneur, 7th — the world's best collection of Impressionist art, in a converted 1900 railway station on the Seine. The building itself is worth it: the great glass clock face you can stand behind and look out over Paris, the enormous main nave. Go on Thursday evening (open until 9:45pm) for the late-night crowd — substantially fewer people than during the day. The Monet room, the Degas ballerinas, the Van Gogh self-portraits. Book online, skip the queue.</div><div class="dn-meta">📍 1 Rue de la Légion d'Honneur, 7th · €16pp · Thu until 9:45pm · book online</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Classical Guitar Concert at Saint-Julien-le-Pauvre</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">1 Rue Saint-Julien le Pauvre, 5th — Paris's oldest church (built 1165) runs intimate classical concerts almost every night: solo guitar, string quartet, piano. The stone walls and candles make the sound extraordinary. Tickets are €22–28, no booking required (just show up 20 minutes early). Better than Sainte-Chapelle for pure acoustic experience because the room is smaller. Check the program at www.concertsparis.fr. Walk to the Seine from here in 2 minutes.</div><div class="dn-meta">📍 1 Rue Saint-Julien le Pauvre, 5th · concertsparis.fr · €22–28pp · nightly concerts</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Moulin Rouge — The Original Cabaret</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">82 Boulevard de Clichy, 18th — the show that invented cabaret, the red windmill, can-can dancers, the 1889 original. It's enormously touristy and also genuinely spectacular — 60 performers, 1,000 costumes, pyrotechnics, an aquarium on stage. The dinner is fine but not the point; the show-only option (from €87) is better value. Book at moulinrouge.fr — the 9pm show runs 2 hours. This is not cool or hip but it is extraordinary as spectacle and it's Paris.</div><div class="dn-meta">📍 82 Blvd de Clichy, 18th · moulinrouge.fr · show-only from €87pp · 9pm show</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Nuit Blanche or Museum Night — Check Dates</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Paris runs several all-night art events: Nuit Blanche (early October, but check if there's a spring version), Nuit Européenne des Musées (one Saturday in May — museums free and open all night), and the Fête de la Musique (June 21 — free live music on every street corner all night). The Fête de la Musique on June 21 is ONE DAY after your trip ends (you leave June 12) — so this specific trip misses it. But if the trip ever shifts, the Fête de la Musique is the best night to be in Paris.</div><div class="dn-meta">📍 Citywide · free · Fête de la Musique = June 21 · you miss it by 9 days this trip</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Rooftop Open-Air Cinema at MK2</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Several Paris venues run rooftop cinema in summer — MK2 Quai de Loire, La Cinémathèque, and occasional pop-ups on the rooftops of Grand Rex and Gaîté Lyrique. Films are typically in VO (original language with French subtitles). Bring a blanket, order wine from the bar, and watch something under the Paris sky at 9:30pm as the sun finally sets. Check cinemaenpleinair.com for that summer's programming. A genuinely good date-night option on an evening when you want to do something low-key together.</div><div class="dn-meta">📍 Various venues · cinemaenpleinair.com · ~€8–12pp · summer program only</div></div>
+        </details>
+
       </div>
     </div>
 
-    <!-- DATE NIGHT 6 -->
-    <div style="background:#fff;border:1px solid #ddd;border-left:4px solid #7c3aed;border-radius:0 10px 10px 0;padding:24px 28px;margin-bottom:20px;">
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
-        <div style="background:#7c3aed;color:#fff;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:4px;white-space:nowrap;">Date Night 6</div>
-        <div style="font-family:'Playfair Display',serif;font-size:20px;color:#1a2e4a;font-weight:600;">42 Degrés Raw Vegan Dinner + Palais Royal Night Stroll</div>
+    <!-- ── CATEGORY 6: Late Night ── -->
+    <div class="dn-category">
+      <div class="dn-cat-label">🌙 Late Night</div>
+      <div class="dn-grid">
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Rex Club — Legendary Electronic Music</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">5 Boulevard Poissonnière, 2nd — one of Europe's great clubs, in a 1930s movie palace basement. The sound system (designed by Martin Audio) is absurdly good — bass you feel in your chest. Techno, house, electro, with serious international DJs on the weekends. Opens at midnight, peaks at 2am, goes until 6am. €15–20 entry. This is not a "bar" — it's a proper club. Go if she's up for it; it's one of Paris's best kept secrets from the tourist world and is pure city.</div><div class="dn-meta">📍 5 Blvd Poissonnière, 2nd · Fri/Sat · opens midnight · €15–20 entry · rexclub.com</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Oberkampf Bar Hop — Paris's Best Street for Bars</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Rue Oberkampf (11th arr) is Paris's best bar street — organic, local, genuinely fun. Start at Aux Deux Amis (45 Rue Oberkampf) for natural wine and small plates at 8pm. Move to Le Supercoin (3 Rue Baudelique — actually a sister street, Montmartre side) or Café Charbon (109 Rue Oberkampf), an 1880s brasserie with live music and a young crowd. The street stays alive until 2am on weekends. Just walk and go in wherever looks good. That's all you need.</div><div class="dn-meta">📍 Rue Oberkampf, 11th · no plan needed · 8pm–2am · ~€40–60pp for the whole evening</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">After-Midnight Quai de Montebello — The Best View Nobody Knows</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Quai de Montebello (5th arr, Left Bank) is the quai directly across the river from Notre-Dame's apse. After midnight, the bouquiniste boxes are closed, the tourists are gone, the cathedral is lit, and the water reflects it all. Walk there from anywhere after a late dinner or bar. Bring a bottle of something. Sit on the low stone wall with your legs hanging over the river. This is not a bar, not a restaurant, not an activity. It's just Paris being Paris when everyone else has gone to bed.</div><div class="dn-meta">📍 Quai de Montebello, 5th · free · best after midnight · Notre-Dame lit until 1am</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Le Silencio — David Lynch's Private Club</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">142 Rue Montmartre, 2nd — designed by David Lynch as a private club, Le Silencio opens to the public after midnight on weekends. The space is extraordinary: three levels of red velvet, strange sculpture, a live music stage, film projections, and a bar stocked with things you won't find elsewhere. Named after the Club Silencio in Mulholland Drive. Dress well. Get there at 12:30am. €20 entry. The crowd is fashion, film, and music people. Completely unlike anything else in Paris.</div><div class="dn-meta">📍 142 Rue Montmartre, 2nd · public after midnight Fri/Sat · €20 entry · dress up</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Midnight Crêpe Stand Walk</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Several crêpe stands in the Latin Quarter and near the Marais run until 2–3am — particularly on Rue de la Huchette and around Bastille. A buckwheat galette with jam or a classic sugar-and-butter crêpe is €3–5. Walk and eat. This is the best late-night food in Paris that doesn't require sitting down or planning. Nutella crêpes are not traditional and not recommended; butter and sugar or jam is the move. Walk back to the island along the Seine after.</div><div class="dn-meta">📍 Rue de la Huchette, 5th + near Bastille · open until 2–3am · €3–5 per crêpe</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Pigalle &amp; SoPi Late-Night Bar Scene</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">South Pigalle (SoPi) — the blocks south of Pigalle Métro — is Paris's most dynamic nightlife neighborhood right now. Walk Rue Frochot, Rue Henry Monnier, and Rue Notre-Dame de Lorette. Bars include Dirty Dick (tiki bar, genuinely excellent), La Nouvelle Seine (river bar, on a barge), Hardware Société (cocktails), and half a dozen natural wine bars. The area peaks at 10pm–1am. Best on a Thursday, Friday, or Saturday. No plan — just walk and look.</div><div class="dn-meta">📍 South Pigalle, 9th arr · Pigalle Métro · 9pm–2am · no plan needed · walk and explore</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">3am Onion Soup at a Brasserie des Halles</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">The brasseries around Les Halles (1st arr) — Au Pied de Cochon chief among them, open 24/7 since 1947 — serve the classic 3am onion soup (gratinée des Halles) that Parisians have been eating after a night out since the 19th century. It's deeply un-vegan (cheese, beef broth, the whole thing). But it's a Paris rite of passage and Megi can order the French onion with vegetable broth (ask: "bouillon de légumes"). Best eaten slightly drunk and very hungry at 3am.</div><div class="dn-meta">📍 Au Pied de Cochon · 6 Rue Coquillière, 1st · open 24/7 · onion soup ~€18 · iconic</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Japanese Whisky Bar — Bar Benfiddich Style</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Paris has excellent Japanese whisky bars — Sherry Butt (20 Rue Beautrellis, 4th, Marais) is one of the best whisky bars in the city, stocks serious Japanese bottles (Hibiki, Yamazaki, Hakushu, Karuizawa), and has a focused cocktail menu. Small, quiet, serious. Go at 10pm when it's full but not overwhelming. If you want to go deeper: Bar Hemingway at the Ritz (much more expensive, €35/drink) does classic Japanese whisky service in a legendary literary setting.</div><div class="dn-meta">📍 Sherry Butt · 20 Rue Beautrellis, 4th · 7pm–2am · whisky from €15 · Marais · no res</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Pont de Bir-Hakeim at 1am — Paris's Best Bridge</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">The two-level 1905 bridge at Bir-Hakeim (15th/16th arr) — the elevated Métro runs along the top, the foot bridge below — was used in Inception and Last Tango in Paris. At 1am, cross on the lower pedestrian level: the Eiffel Tower is directly in front of you, the river below, Métro tracks above. The proportions are extraordinary. This is a 10-minute detour from anywhere in the western city and it's worth every minute. Walk it once each direction, slowly.</div><div class="dn-meta">📍 Pont de Bir-Hakeim · 15th/16th · free · best at 1am · Eiffel Tower dead ahead</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Night Photography Session — 10pm to Midnight</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Paris at night is designed to be photographed. Give yourselves 2 hours and a route: Pont d'Iéna (tower reflection in the river) → Pont Alexandre III (gold lamps, gilded statues) → Place de la Concorde obelisk → Tuileries garden lit at night → Louvre pyramid. Use portrait mode on your phones for each other. Paris at 10–11pm is quieter than you expect, and the light on the monuments at that hour is better than any time of day. You'll end up with 300 photos and keep maybe 20 great ones.</div><div class="dn-meta">📍 7th → 8th → 1st arr · 10pm–midnight · just phones · free · 5km walking route</div></div>
+        </details>
+
       </div>
-      <div style="font-size:13px;color:#888;margin-bottom:14px;">The adventurous one · first raw vegan bistronomy restaurant in France</div>
-      <div style="font-size:14px;color:#333;line-height:1.8;margin-bottom:16px;">
-        Take Megi to <strong>42 Degrés</strong> — the first raw organic vegan bistronomy restaurant in France. Nothing served above 42°C to preserve nutrients. This sounds clinical but the food is genuinely beautiful and creative — Megi will love it. After dinner, walk to the <strong>Palais Royal gardens</strong> at night (they stay open late in summer) — the colonnades lit up, Daniel Buren's striped columns, the quiet fountains. One of the most romantic spots in the city and almost nobody is there after 9 pm. Pick up a vegan treat from <strong>Aujourd'hui Demain</strong> (concept store + vegan bakery, 10 rue de la Chaise, 7th) earlier in the day to bring for the walk.
+    </div>
+
+    <!-- ── CATEGORY 7: Day Escapes ── -->
+    <div class="dn-category">
+      <div class="dn-cat-label">🚆 Day Escapes</div>
+      <div class="dn-grid">
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Giverny — Monet's Garden in June</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Claude Monet's house and garden in Giverny (Normandy) — the Japanese bridge, the water lilies, the wisteria, the flower gardens that are painted across 250 canvases at the Orangerie and Musée d'Orsay. June is the best month to visit: everything is in bloom. Take the train from Gare Saint-Lazare to Vernon (75 min), then a bus or taxi 5km to Giverny. The garden opens at 9:30am; arrive early to beat the crowds. Pack a picnic. The apple orchards behind the house are perfect in June.</div><div class="dn-meta">📍 Giverny, Normandy · train from Saint-Lazare + bus · €12 garden entry · go early June</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Versailles Gardens — Picnic in the Grand Trianon Park</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Everyone goes to Versailles for the château. Skip the château lines and buy a garden-only ticket (€9) — you get the full 800 hectares of Le Nôtre's geometry, the Grand Canal, the fountains, the bosquets (wooded rooms). Walk to the Grand Trianon (Marie Antoinette's private retreat) and past it to the Hameau de la Reine — her fake farm village. Bring a picnic, find a spot by the canal, stay for 5 hours. On Tuesday/Saturday/Sunday the "Grandes Eaux" fountains run — add €10. Come back exhausted.</div><div class="dn-meta">📍 Versailles · RER C from Paris · garden-only €9 · Grandes Eaux €10 extra · go Tue/Sat/Sun</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Épernay — Champagne Cellars &amp; Picnic</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">90 minutes by train from Gare de l'Est, Épernay is the capital of Champagne — the Avenue de Champagne is 1km of Champagne house façades (Moët &amp; Chandon, Perrier-Jouët, Pol Roger) with miles of chalk caves underneath. Book a cave tour + tasting at Moët (the biggest, most organized) or de Castellane (more intimate, better views). Then picnic in the vineyard with a bottle you bought at cost. A full day trip: train, caves, tasting, lunch, train back. €60–90pp all in.</div><div class="dn-meta">📍 Épernay · train from Gare de l'Est · 90 min · cave tours €30pp · full day</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Fontainebleau Forest — Rock Climbing &amp; Château</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">45 minutes by train from Gare de Lyon — the Fontainebleau forest is where professional climbers train on the sandstone boulders (bouldering at Bleau is world-famous). You don't need to be a climber: the forest is extraordinary for walking, and the Château de Fontainebleau (a royal residence from the 12th century, Napoleon's favorite) is better than Versailles and half the crowds. Pack a picnic. Walk the forest paths in the morning, château in the afternoon. Back in Paris by 6pm.</div><div class="dn-meta">📍 Fontainebleau · train from Gare de Lyon · 45 min · château €14pp · forest free</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Provins — Medieval UNESCO Village</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">90 minutes from Gare de l'Est (one train, no connection), Provins is a remarkably preserved 12th-century medieval trading town — ramparts, towers, underground passages, and rose gardens (it's the city of roses). Almost no tourists. The rampart walk is extraordinary and the underground chalk caves can be toured. On weekends in summer they run medieval jousting and falconry shows in the upper town. Lunch at a terrace restaurant under the tower. Back in Paris by 7pm.</div><div class="dn-meta">📍 Provins · train from Gare de l'Est · 90 min · ramparts free, caves €8pp · UNESCO site</div></div>
+        </details>
+
       </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <div style="background:#f5f3ff;border:1px solid #c4b5fd;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#7c3aed;">🥗 Dinner</strong><br>42 Degrés · raw vegan bistronomy · first of its kind in France
-        </div>
-        <div style="background:#f5f3ff;border:1px solid #c4b5fd;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#7c3aed;">🏛 After</strong><br>Palais Royal gardens at night · lit colonnade · zero tourists
-        </div>
-        <div style="background:#f5f3ff;border:1px solid #c4b5fd;border-radius:6px;padding:10px 14px;font-size:13px;">
-          <strong style="color:#7c3aed;">🍰 Treat</strong><br>Aujourd'hui Demain vegan pastry · pick up during the day
-        </div>
+    </div>
+
+    <!-- ── CATEGORY 8: Markets & Spontaneous ── -->
+    <div class="dn-category">
+      <div class="dn-cat-label">🛍 Markets &amp; Spontaneous</div>
+      <div class="dn-grid">
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Marché d'Aligre Sunday Morning</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Place d'Aligre, 12th — the best food market in Paris and the most local. A covered hall (Beauvau market) plus an outdoor street market: vegetables and fruit piled high, olive stands, spice dealers, fresh bread, North African vendors, and one of the best cheese selections in the city. Go Sunday at 9am before it gets crowded. Shop for the day's picnic: tomatoes, herbs, peaches (in June), hummus, good olives. Le Baron Rouge (the wine barrel bar) is next door and opens at 10am Sunday.</div><div class="dn-meta">📍 Place d'Aligre, 12th · open Tue–Sun mornings until noon · free entry · best on Sunday</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Marché aux Puces — Flea Market at Saint-Ouen</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Porte de Clignancourt, 18th — the world's largest antique market. 2,000 vendors across 14 separate markets covering 7 hectares. You can spend 4 hours and not see it all. Go on Saturday morning (it opens at 9am). The Marché Paul Bert and Serpette sections have the best 20th-century design and furniture. The outer stalls have cheaper vintage clothing, records, and oddities. Haggling is normal and expected. Budget whatever you feel like; bring cash.</div><div class="dn-meta">📍 Porte de Clignancourt, 18th · Sat/Sun/Mon · opens 9am · cash preferred · free entry</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Île de la Cité Flower Market — Walk &amp; Buy Something Living</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Place Louis Lépine, 4th — a permanent covered flower market on the Île de la Cité, steps from Notre-Dame, open Monday through Saturday. On Sundays it becomes a bird market (Marché aux Oiseaux). Go on a Saturday morning and buy her flowers from the market — let her pick exactly what she wants from the stalls, then buy them. Walk back to the island together. This is a 45-minute activity but feels like the whole morning. Then coffee at a café on the island.</div><div class="dn-meta">📍 Place Louis Lépine, 4th · Mon–Sat flower market · Sun bird market · 8am–7pm · free entry</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Say Nothing — Just Walk. Let Paris Decide.</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Show up at her door, say nothing, just start walking. No destination. No phone navigation. Turn whenever you feel like it. If something smells good, go in. If there's a courtyard, look through the gate. If there's music, follow it. If you find a good-looking bar, stop. Paris is dense enough that you will never run out of things to discover within 10 minutes of Île Saint-Louis in any direction. The best nights often have no plan. The city will fill in the rest.</div><div class="dn-meta">📍 Start: her door · destination: unknown · cost: whatever you spend · best on warm evenings</div></div>
+        </details>
+
+        <details class="dn-card">
+          <summary><span class="dn-title">Buy a Perfect Single Thing Together</span><span class="dn-chevron">▼</span></summary>
+          <div class="dn-body"><div class="dn-desc">Walk the bouquinistes or the Saint-Ouen flea market with one rule: you must collectively agree on one perfect object to buy together — a vintage Paris map, an old French novel, a postcard from 1920, a print, a single perfect glass from a brocante stall. Budget €15–40. The hunt is the thing — arguing about whether something is worth it, what you'll do with it, who keeps it if things go wrong. If things go right, it becomes an artifact of this trip. Frame it when you get home.</div><div class="dn-meta">📍 Bouquinistes on the Seine or Saint-Ouen · any morning · ~€15–40 budget · just one thing</div></div>
+        </details>
+
       </div>
     </div>
 
     <!-- NOTE -->
     <div style="background:#2d1b4e;border-radius:10px;padding:20px 24px;color:rgba(255,255,255,0.85);font-size:14px;line-height:1.8;margin-top:8px;">
-      <strong style="color:#c9a84c;display:block;margin-bottom:6px;">📌 A few notes on vegan Paris</strong>
-      Paris's vegan scene has exploded — HappyCow lists 90+ dedicated vegan restaurants. Almost every good bistronomie restaurant now has strong plant-based options even if they're not exclusively vegan. When in doubt, call ahead and ask — French chefs are more accommodating than their reputation suggests, especially in the better restaurants. The island itself has limited vegan-specific options, so plan dinner off-island most nights and enjoy the walk back.
+      <strong style="color:#c9a84c;display:block;margin-bottom:6px;">📌 A note on using this list</strong>
+      Don't try to do all of these — that's not the point. Browse them with Megi together and let her pick. She'll gravitate toward 6–8 that genuinely interest her and that's your list. The vegan options are flagged where relevant but she's capable of navigating any menu in this city. Paris's vegan scene has grown faster than anywhere in Europe — HappyCow lists 90+ dedicated vegan restaurants. When in doubt at any restaurant: call ahead, ask nicely, and French chefs are more flexible than their reputation suggests.
     </div>
 
   </div>
 </div>
 
-<!-- ══════════ TIPS ══════════ -->
+
 <div class="tips-section" id="tips">
   <h2>Essential Tips</h2>
   <div class="tips-grid">
