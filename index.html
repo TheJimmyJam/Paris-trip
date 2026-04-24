@@ -3434,6 +3434,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Apply saved state and show progress
   applyState();
   updateProgress();
+  scrollToNextItem();
 });
 
 /* ── LABEL DAY CARDS ───────────────────────── */
@@ -3609,6 +3610,28 @@ function updateProgress() {
 
   document.getElementById('progressFill').style.width  = pct + '%';
   document.getElementById('progressCount').textContent = `${done} / ${total}`;
+}
+
+/* ── SCROLL TO NEXT UNCHECKED ITEM ────────── */
+function scrollToNextItem() {
+  const allBoxes = document.querySelectorAll('.item-check');
+  if (!allBoxes.length) return;
+
+  // Find the first unchecked item that comes after at least one checked item
+  let foundChecked = false;
+  let target = null;
+  for (const cb of allBoxes) {
+    if (cb.checked) { foundChecked = true; }
+    else if (foundChecked) { target = cb; break; }
+  }
+
+  // If everything's checked (congrats!) scroll to the last item
+  if (!target && foundChecked) target = allBoxes[allBoxes.length - 1];
+
+  // Nothing checked yet — don't scroll at all
+  if (!target) return;
+
+  target.closest('li').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 /* ── LOCALSTORAGE FALLBACK ─────────────────── */
