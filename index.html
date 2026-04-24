@@ -374,7 +374,7 @@
       border-radius: 4px;
       white-space: nowrap;
       margin-top: 2px;
-      width: 72px;
+      width: fit-content;
       flex-shrink: 0;
       text-align: center;
     }
@@ -471,9 +471,11 @@
     width: 0%;
   }
   .progress-count {
-    color: rgba(255,255,255,0.7);
-    font-size: 12px;
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 700;
     white-space: nowrap;
+    letter-spacing: 1px;
   }
 
   /* ── CHECKBOXES ─────────────────────────── */
@@ -3370,10 +3372,10 @@
 </footer>
 
 <!-- ── PROGRESS BAR (injected sticky) ── -->
-<div class="trip-progress" id="tripProgress" style="display:none;">
+<div class="trip-progress" id="tripProgress">
   <span class="progress-label">Trip Progress</span>
   <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-  <span class="progress-count" id="progressCount">0 / 0 done</span>
+  <span class="progress-count" id="progressCount">0 / 0</span>
 </div>
 
 <!-- ── SETUP BANNER ── -->
@@ -3409,8 +3411,6 @@ let toastTimer = null;
 
 /* ── INIT ──────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', async () => {
-  db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
   // Label each day card with its day id
   labelDayCards();
 
@@ -3419,13 +3419,19 @@ document.addEventListener('DOMContentLoaded', async () => {
   injectNotesSections();
   injectRestaurantButtons();
 
-  // Show progress bar
-  document.getElementById('tripProgress').style.display = 'flex';
+  // Load from localStorage first (instant, no network needed)
+  loadFromLocalStorage();
 
-  // Load saved data from Supabase
-  await loadData();
+  // Try Supabase — if it fails, we just keep using localStorage
+  try {
+    db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    await loadData();   // merges remote data into tripData
+    saveToLocalStorage(); // sync remote state into localStorage
+  } catch (e) {
+    // Supabase unavailable — that's fine, localStorage already loaded
+  }
 
-  // Apply saved state
+  // Apply saved state and show progress
   applyState();
   updateProgress();
 });
@@ -3602,13 +3608,32 @@ function updateProgress() {
   const pct     = total ? Math.round((done / total) * 100) : 0;
 
   document.getElementById('progressFill').style.width  = pct + '%';
-  document.getElementById('progressCount').textContent = `${done} / ${total} done`;
+  document.getElementById('progressCount').textContent = `${done} / ${total}`;
+}
+
+/* ── LOCALSTORAGE FALLBACK ─────────────────── */
+const LS_KEY = 'paris_trip_data';
+
+function saveToLocalStorage() {
+  try { localStorage.setItem(LS_KEY, JSON.stringify(tripData)); } catch(e) {}
+}
+
+function loadFromLocalStorage() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (raw) Object.assign(tripData, JSON.parse(raw));
+  } catch(e) {}
 }
 
 /* ── PERSIST TO SUPABASE ───────────────────── */
 async function persistDay(dayId) {
   const data = tripData[dayId];
   if (!data) return;
+
+  // Always save locally first — works offline
+  saveToLocalStorage();
+
+  if (!db) { showToast('Saved locally ✓'); return; }
 
   const { error } = await db.from('paris_trip').upsert({
     day_id:               dayId,
@@ -3620,7 +3645,7 @@ async function persistDay(dayId) {
 
   if (error) {
     if (error.code === '42P01') document.getElementById('setupBanner').style.display = 'block';
-    else showToast('Save failed', true);
+    else showToast('Saved locally ✓');
   } else {
     showToast('Saved ✓');
   }
