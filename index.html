@@ -991,6 +991,187 @@
     .trip-progress { padding: 10px 32px; }
     .weather-grid { grid-template-columns: 1fr 1fr !important; }
   }
+  /* ── DATE NIGHT ADD BUTTON ──────────────── */
+  .dn-add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    padding: 7px 16px;
+    background: #2d1b4e;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .dn-add-btn:hover { background: #4a2d7a; }
+  .dn-add-btn.dn-added-state { background: #16a34a; cursor: default; }
+
+  /* ── DATE NIGHT MODAL ───────────────────── */
+  .dn-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+  }
+  .dn-modal-overlay.open { display: flex; }
+  .dn-modal {
+    background: #fff;
+    border-radius: 14px;
+    padding: 32px;
+    max-width: 460px;
+    width: 90%;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+  }
+  .dn-modal-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9333ea;
+    margin-bottom: 6px;
+  }
+  .dn-modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #2d1b4e;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .dn-modal-meta {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 22px;
+    line-height: 1.6;
+    border-bottom: 1px solid #f0ebe3;
+    padding-bottom: 16px;
+  }
+  .dn-modal label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #6b4a8a;
+    margin-bottom: 6px;
+  }
+  .dn-modal select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 16px;
+    background: #fdf8f0;
+    color: #333;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%23888'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+  }
+  .dn-modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 4px;
+  }
+  .dn-cancel-btn {
+    padding: 9px 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    color: #666;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .dn-confirm-btn {
+    padding: 9px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #2d1b4e;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .dn-confirm-btn:hover { background: #4a2d7a; }
+
+  /* ── DATE NIGHT ACTIVITY ITEM ───────────── */
+  .date-night-li {
+    background: #fdf5ff !important;
+    border-left: 3px solid #9333ea !important;
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px 10px 12px !important;
+    margin: 8px 0 !important;
+    list-style: none !important;
+  }
+  .date-night-li::before { display: none !important; }
+  .dn-li-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+  }
+  .dn-li-badge {
+    background: #9333ea;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .dn-li-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d1b4e;
+    flex: 1;
+  }
+  .dn-li-meta {
+    font-size: 11px;
+    color: #777;
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+  .dn-li-timing {
+    display: flex;
+    gap: 6px;
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin-top: 8px;
+    font-size: 11px;
+    color: #92400e;
+    line-height: 1.5;
+  }
+  .dn-li-remove {
+    background: none;
+    border: none;
+    color: #ccc;
+    font-size: 13px;
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 0 2px;
+    line-height: 1;
+  }
+  .dn-li-remove:hover { color: #e53e3e; }
+
   </style>
 </head>
 <body>
@@ -3378,6 +3559,48 @@
   Paris &amp; Burgundy &nbsp;·&nbsp; Jimmy Cannon &nbsp;·&nbsp; May 23 – June 12, 2026 &nbsp;·&nbsp; Bon voyage
 </footer>
 
+<!-- ── DATE NIGHT MODAL ── -->
+<div class="dn-modal-overlay" id="dnModalOverlay">
+  <div class="dn-modal">
+    <div class="dn-modal-eyebrow">💜 Megi's Pick</div>
+    <div class="dn-modal-title" id="dnModalTitle"></div>
+    <div class="dn-modal-meta" id="dnModalMeta"></div>
+    <label>Add to which day?</label>
+    <select id="dnDateSelect">
+      <optgroup label="May — Paris I">
+        <option value="02">Saturday, May 24</option>
+        <option value="03">Sunday, May 25</option>
+        <option value="04">Monday, May 26</option>
+        <option value="05">Tuesday, May 27</option>
+        <option value="06">Wednesday, May 28</option>
+        <option value="07">Thursday, May 29</option>
+      </optgroup>
+      <optgroup label="June — Paris II (Île Saint-Louis)">
+        <option value="12">Tuesday, June 3</option>
+        <option value="13">Wednesday, June 4</option>
+        <option value="14">Thursday, June 5</option>
+        <option value="15">Friday, June 6</option>
+        <option value="16">Saturday, June 7</option>
+        <option value="17">Sunday, June 8</option>
+        <option value="18">Monday, June 9</option>
+        <option value="19">Tuesday, June 10</option>
+        <option value="20">Wednesday, June 11</option>
+        <option value="21">Thursday, June 12</option>
+      </optgroup>
+    </select>
+    <label>When in the day?</label>
+    <select id="dnTimeSelect">
+      <option value="evening">Evening</option>
+      <option value="afternoon">Afternoon</option>
+      <option value="morning">Morning</option>
+    </select>
+    <div class="dn-modal-actions">
+      <button class="dn-cancel-btn" id="dnCancelBtn">Cancel</button>
+      <button class="dn-confirm-btn" id="dnConfirmBtn">Add to Itinerary 💜</button>
+    </div>
+  </div>
+</div>
+
 <!-- ── SETUP BANNER ── -->
 <div class="setup-banner" id="setupBanner">
   <h3>⚙️ One-time setup needed</h3>
@@ -3418,6 +3641,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   injectCheckboxes();
   injectNotesSections();
   injectRestaurantButtons();
+  injectDateNightButtons();
+  setupDNModal();
 
   // Load from localStorage first (instant, no network needed)
   loadFromLocalStorage();
@@ -3433,6 +3658,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Apply saved state and show progress
   applyState();
+  applyDateNights();
   updateProgress();
   scrollToNextItem();
 });
@@ -3685,7 +3911,160 @@ function debounceSave(dayId, statusEl) {
 
 /* ── HELPERS ───────────────────────────────── */
 function ensureDay(dayId) {
-  if (!tripData[dayId]) tripData[dayId] = { checked: [], notes: '', visited: [] };
+  if (!tripData[dayId]) tripData[dayId] = { checked: [], notes: '', visited: [], dateNights: [] };
+  if (!tripData[dayId].dateNights) tripData[dayId].dateNights = [];
+}
+
+/* ── DATE NIGHT SYSTEM ─────────────────────── */
+const MEGI_DAYS = {
+  '02': 'Saturday, May 24',
+  '03': 'Sunday, May 25',
+  '04': 'Monday, May 26',
+  '05': 'Tuesday, May 27',
+  '06': 'Wednesday, May 28',
+  '07': 'Thursday, May 29',
+  '12': 'Tuesday, June 3',
+  '13': 'Wednesday, June 4',
+  '14': 'Thursday, June 5',
+  '15': 'Friday, June 6',
+  '16': 'Saturday, June 7',
+  '17': 'Sunday, June 8',
+  '18': 'Monday, June 9',
+  '19': 'Tuesday, June 10',
+  '20': 'Wednesday, June 11',
+  '21': 'Thursday, June 12'
+};
+
+let pendingDN = null;
+
+function injectDateNightButtons() {
+  document.querySelectorAll('.dn-card').forEach(card => {
+    const body = card.querySelector('.dn-body');
+    const titleEl = card.querySelector('.dn-title');
+    const metaEl  = card.querySelector('.dn-meta');
+    if (!body || !titleEl) return;
+    const btn = document.createElement('button');
+    btn.className = 'dn-add-btn';
+    btn.textContent = '💜 Add to Itinerary';
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      pendingDN = {
+        title: titleEl.textContent.trim(),
+        meta:  metaEl ? metaEl.textContent.trim() : ''
+      };
+      document.getElementById('dnModalTitle').textContent = pendingDN.title;
+      document.getElementById('dnModalMeta').textContent  = pendingDN.meta;
+      document.getElementById('dnModalOverlay').classList.add('open');
+    });
+    body.appendChild(btn);
+  });
+}
+
+function setupDNModal() {
+  document.getElementById('dnCancelBtn').addEventListener('click', () => {
+    document.getElementById('dnModalOverlay').classList.remove('open');
+    pendingDN = null;
+  });
+  document.getElementById('dnModalOverlay').addEventListener('click', e => {
+    if (e.target === document.getElementById('dnModalOverlay')) {
+      document.getElementById('dnModalOverlay').classList.remove('open');
+      pendingDN = null;
+    }
+  });
+  document.getElementById('dnConfirmBtn').addEventListener('click', () => {
+    if (!pendingDN) return;
+    const dayId     = document.getElementById('dnDateSelect').value;
+    const timeOfDay = document.getElementById('dnTimeSelect').value;
+    addDateNightToDay(dayId, pendingDN.title, pendingDN.meta, timeOfDay);
+    document.getElementById('dnModalOverlay').classList.remove('open');
+    pendingDN = null;
+  });
+}
+
+function addDateNightToDay(dayId, title, meta, timeOfDay) {
+  ensureDay(dayId);
+  const dn = { id: Date.now(), title, meta, timeOfDay };
+  tripData[dayId].dateNights.push(dn);
+  renderDateNight(dayId, dn);
+  saveToLocalStorage();
+  if (db) debounceSave(dayId);
+  const card = document.querySelector(`.day-card[data-day="${dayId}"]`);
+  if (card) {
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    card.style.outline = '3px solid #9333ea';
+    setTimeout(() => card.style.outline = '', 2200);
+  }
+  showToast(`💜 Added to ${MEGI_DAYS[dayId] || 'Day ' + dayId}`);
+}
+
+function renderDateNight(dayId, dn) {
+  const card = document.querySelector(`.day-card[data-day="${dayId}"]`);
+  if (!card) return;
+  const list = card.querySelector('.activity-list');
+  if (!list) return;
+
+  const timingNote = buildTimingNote(card, dn.timeOfDay, dn.meta);
+
+  const li = document.createElement('li');
+  li.className = 'date-night-li';
+  li.dataset.dnId  = dn.id;
+  li.dataset.dayId = dayId;
+  li.innerHTML = `
+    <div class="dn-li-header">
+      <span class="dn-li-badge">💜 Date Night</span>
+      <span class="dn-li-title">${dn.title}</span>
+      <button class="dn-li-remove" title="Remove">✕</button>
+    </div>
+    <div class="dn-li-meta">${dn.meta}</div>
+    ${timingNote ? `<div class="dn-li-timing">⏰ ${timingNote}</div>` : ''}
+  `;
+  li.querySelector('.dn-li-remove').addEventListener('click', () => {
+    removeDateNight(dayId, dn.id, li);
+  });
+
+  if (dn.timeOfDay === 'morning') {
+    list.insertBefore(li, list.firstChild);
+  } else if (dn.timeOfDay === 'afternoon') {
+    const morningItem = Array.from(list.querySelectorAll('li:not(.date-night-li)')).find(el =>
+      /morning|breakfast/i.test(el.textContent)
+    );
+    if (morningItem) morningItem.after(li);
+    else list.insertBefore(li, list.firstChild);
+  } else {
+    list.appendChild(li);
+  }
+}
+
+function buildTimingNote(card, timeOfDay, meta) {
+  if (timeOfDay !== 'evening') return '';
+  const items = Array.from(card.querySelectorAll('.activity-list li:not(.date-night-li)'));
+  const hasEveningConflict = items.some(li => {
+    const t = li.textContent.toLowerCase();
+    return t.includes('evening') || t.includes('dinner') || t.includes('dusk') || /[7-9]:\d{2}\s*pm/i.test(t);
+  });
+  const durationMatch = meta.match(/(\d)\s*[-–]\s*(\d)\s*hour/i);
+  const parts = [];
+  if (hasEveningConflict) parts.push('You have evening plans — consider moving dinner to 7:00 pm to make room.');
+  if (durationMatch) parts.push(`This activity runs ${durationMatch[1]}–${durationMatch[2]} hours.`);
+  return parts.join(' ');
+}
+
+function removeDateNight(dayId, dnId, liEl) {
+  if (tripData[dayId] && tripData[dayId].dateNights) {
+    tripData[dayId].dateNights = tripData[dayId].dateNights.filter(d => d.id !== dnId);
+  }
+  liEl.remove();
+  saveToLocalStorage();
+  if (db) debounceSave(dayId);
+  showToast('Date night removed');
+}
+
+function applyDateNights() {
+  Object.keys(tripData).forEach(dayId => {
+    const dns = tripData[dayId] && tripData[dayId].dateNights;
+    if (!dns || !dns.length) return;
+    dns.forEach(dn => renderDateNight(dayId, dn));
+  });
 }
 
 function showToast(msg, isError = false) {
