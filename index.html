@@ -1172,6 +1172,56 @@
   }
   .dn-li-remove:hover { color: #e53e3e; }
 
+  /* ── DN CARD SCHEDULED BADGES ───────────── */
+  .dn-scheduled {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 10px 0 6px;
+    padding: 10px 12px;
+    background: #f3ebff;
+    border: 1px solid #d8b4fe;
+    border-radius: 8px;
+  }
+  .dn-scheduled-label {
+    width: 100%;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #7c3aed;
+    margin-bottom: 4px;
+  }
+  .dn-sched-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #2d1b4e;
+    color: #e9d5ff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px 3px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .dn-sched-chip-remove {
+    background: none;
+    border: none;
+    color: #c4b5fd;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 0;
+    line-height: 1;
+    margin-left: 2px;
+    transition: color 0.15s;
+  }
+  .dn-sched-chip-remove:hover { color: #f87171; }
+  .dn-add-btn.is-scheduled {
+    background: #f3ebff;
+    border-color: #9333ea;
+    color: #6b21a8;
+  }
+
   /* ── TABS ───────────────────────────────── */
   .tab-nav {
     background: #fff;
@@ -1244,7 +1294,7 @@
   <button class="tab-btn active" data-tab="tab-week1" onclick="switchTab('tab-week1')">🗼 Week 1 · Paris <span style="opacity:.55;font-weight:400;">May 23–29</span></button>
   <button class="tab-btn" data-tab="tab-week2" onclick="switchTab('tab-week2')">🍷 Week 2 · Burgundy <span style="opacity:.55;font-weight:400;">May 30–Jun 5</span></button>
   <button class="tab-btn" data-tab="tab-week3" onclick="switchTab('tab-week3')">🏝 Week 3 · Paris <span style="opacity:.55;font-weight:400;">Jun 6–12</span></button>
-  <button class="tab-btn tab-dates" data-tab="tab-dates" onclick="switchTab('tab-dates')">💜 Date Nights</button>
+  <button class="tab-btn tab-dates" data-tab="tab-dates" onclick="switchTab('tab-dates')">💜 Dates with Megi</button>
   <button class="tab-btn" data-tab="tab-tips" onclick="switchTab('tab-tips')">📌 Tips</button>
 </nav>
 
@@ -2979,7 +3029,7 @@
   <div class="img-banner-overlay" style="background:linear-gradient(to right, rgba(45,27,78,0.85) 0%, rgba(45,27,78,0.1) 60%);">
     <div class="img-banner-text">
       <p>Special Section</p>
-      <h2>Date Nights<br>with Megi</h2>
+      <h2>Dates with Megi</h2>
     </div>
   </div>
 </div>
@@ -4099,6 +4149,7 @@ function addDateNightToDay(dayId, title, meta, timeOfDay) {
     setTimeout(() => card.style.outline = '', 2200);
   }
   showToast(`💜 Added to ${MEGI_DAYS[dayId] || 'Day ' + dayId}`);
+  refreshDnCardBadges();
 }
 
 function renderDateNight(dayId, dn) {
@@ -4157,10 +4208,11 @@ function removeDateNight(dayId, dnId, liEl) {
   if (tripData[dayId] && tripData[dayId].dateNights) {
     tripData[dayId].dateNights = tripData[dayId].dateNights.filter(d => d.id !== dnId);
   }
-  liEl.remove();
+  if (liEl) liEl.remove();
   saveToLocalStorage();
   if (db) debounceSave(dayId);
   showToast('Date night removed');
+  refreshDnCardBadges();
 }
 
 function applyDateNights() {
@@ -4168,6 +4220,67 @@ function applyDateNights() {
     const dns = tripData[dayId] && tripData[dayId].dateNights;
     if (!dns || !dns.length) return;
     dns.forEach(dn => renderDateNight(dayId, dn));
+  });
+  refreshDnCardBadges();
+}
+
+/* ── DN CARD BADGES (Date Nights tab status) ── */
+function refreshDnCardBadges() {
+  // Build a lookup: title -> [ { dayId, dnId, dayLabel } ]
+  const scheduled = {};
+  Object.keys(tripData).forEach(dayId => {
+    const dns = tripData[dayId] && tripData[dayId].dateNights;
+    if (!dns || !dns.length) return;
+    dns.forEach(dn => {
+      const key = dn.title.trim();
+      if (!scheduled[key]) scheduled[key] = [];
+      scheduled[key].push({ dayId, dnId: dn.id, dayLabel: MEGI_DAYS[dayId] || ('Day ' + dayId) });
+    });
+  });
+
+  document.querySelectorAll('.dn-card').forEach(card => {
+    const titleEl = card.querySelector('.dn-title');
+    const body    = card.querySelector('.dn-body');
+    const addBtn  = card.querySelector('.dn-add-btn');
+    if (!titleEl || !body) return;
+
+    const title   = titleEl.textContent.trim();
+    const entries = scheduled[title] || [];
+
+    // Remove old badge block if present
+    const old = body.querySelector('.dn-scheduled');
+    if (old) old.remove();
+
+    if (entries.length === 0) {
+      if (addBtn) { addBtn.classList.remove('is-scheduled'); addBtn.textContent = '💜 Add to Itinerary'; }
+      return;
+    }
+
+    // Build badge block
+    const wrap = document.createElement('div');
+    wrap.className = 'dn-scheduled';
+    wrap.innerHTML = `<div class="dn-scheduled-label">✓ Added to itinerary</div>`;
+
+    entries.forEach(({ dayId, dnId, dayLabel }) => {
+      const chip = document.createElement('span');
+      chip.className = 'dn-sched-chip';
+      chip.innerHTML = `📅 ${dayLabel} <button class="dn-sched-chip-remove" title="Remove from ${dayLabel}">✕</button>`;
+      chip.querySelector('.dn-sched-chip-remove').addEventListener('click', e => {
+        e.stopPropagation();
+        const liEl = document.querySelector(`.date-night-li[data-dn-id="${dnId}"]`);
+        removeDateNight(dayId, dnId, liEl);
+      });
+      wrap.appendChild(chip);
+    });
+
+    // Insert before the Add button
+    if (addBtn) {
+      body.insertBefore(wrap, addBtn);
+      addBtn.classList.add('is-scheduled');
+      addBtn.textContent = '＋ Add to Another Day';
+    } else {
+      body.appendChild(wrap);
+    }
   });
 }
 
