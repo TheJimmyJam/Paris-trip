@@ -991,6 +991,279 @@
     .trip-progress { padding: 10px 32px; }
     .weather-grid { grid-template-columns: 1fr 1fr !important; }
   }
+  /* ── DATE NIGHT ADD BUTTON ──────────────── */
+  .dn-add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    padding: 7px 16px;
+    background: #2d1b4e;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .dn-add-btn:hover { background: #4a2d7a; }
+  .dn-add-btn.dn-added-state { background: #16a34a; cursor: default; }
+
+  /* ── DATE NIGHT MODAL ───────────────────── */
+  .dn-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+  }
+  .dn-modal-overlay.open { display: flex; }
+  .dn-modal {
+    background: #fff;
+    border-radius: 14px;
+    padding: 32px;
+    max-width: 460px;
+    width: 90%;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+  }
+  .dn-modal-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9333ea;
+    margin-bottom: 6px;
+  }
+  .dn-modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #2d1b4e;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .dn-modal-meta {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 22px;
+    line-height: 1.6;
+    border-bottom: 1px solid #f0ebe3;
+    padding-bottom: 16px;
+  }
+  .dn-modal label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #6b4a8a;
+    margin-bottom: 6px;
+  }
+  .dn-modal select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 16px;
+    background: #fdf8f0;
+    color: #333;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%23888'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+  }
+  .dn-modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 4px;
+  }
+  .dn-cancel-btn {
+    padding: 9px 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    color: #666;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .dn-confirm-btn {
+    padding: 9px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #2d1b4e;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .dn-confirm-btn:hover { background: #4a2d7a; }
+
+  /* ── DATE NIGHT ACTIVITY ITEM ───────────── */
+  .date-night-li {
+    background: #fdf5ff !important;
+    border-left: 3px solid #9333ea !important;
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px 10px 12px !important;
+    margin: 8px 0 !important;
+    list-style: none !important;
+  }
+  .date-night-li::before { display: none !important; }
+  .dn-li-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+  }
+  .dn-li-badge {
+    background: #9333ea;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .dn-li-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d1b4e;
+    flex: 1;
+  }
+  .dn-li-meta {
+    font-size: 11px;
+    color: #777;
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+  .dn-li-timing {
+    display: flex;
+    gap: 6px;
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin-top: 8px;
+    font-size: 11px;
+    color: #92400e;
+    line-height: 1.5;
+  }
+  .dn-li-remove {
+    background: none;
+    border: none;
+    color: #ccc;
+    font-size: 13px;
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 0 2px;
+    line-height: 1;
+  }
+  .dn-li-remove:hover { color: #e53e3e; }
+
+  /* ── DN CARD SCHEDULED BADGES ───────────── */
+  .dn-scheduled {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 10px 0 6px;
+    padding: 10px 12px;
+    background: #f3ebff;
+    border: 1px solid #d8b4fe;
+    border-radius: 8px;
+  }
+  .dn-scheduled-label {
+    width: 100%;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #7c3aed;
+    margin-bottom: 4px;
+  }
+  .dn-sched-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #2d1b4e;
+    color: #e9d5ff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px 3px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .dn-sched-chip-remove {
+    background: none;
+    border: none;
+    color: #c4b5fd;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 0;
+    line-height: 1;
+    margin-left: 2px;
+    transition: color 0.15s;
+  }
+  .dn-sched-chip-remove:hover { color: #f87171; }
+  .dn-add-btn.is-scheduled {
+    background: #f3ebff;
+    border-color: #9333ea;
+    color: #6b21a8;
+  }
+
+  /* ── TABS ───────────────────────────────── */
+  .tab-nav {
+    background: #fff;
+    border-bottom: 2px solid var(--border);
+    padding: 0 60px;
+    display: flex;
+    gap: 0;
+    position: sticky;
+    top: 36px; /* below progress bar */
+    z-index: 98;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tab-nav::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 12px 18px;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    white-space: nowrap;
+    margin-bottom: -2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .tab-btn:hover { color: var(--navy); }
+  .tab-btn.active { color: var(--navy); border-bottom-color: var(--gold); }
+  .tab-btn.tab-dates { color: #6b4a8a; }
+  .tab-btn.tab-dates.active { border-bottom-color: #9333ea; color: #2d1b4e; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  @media (max-width: 700px) {
+    .tab-nav { padding: 0 8px; top: 30px; }
+    .tab-btn { font-size: 10px; padding: 10px 10px; letter-spacing: 1px; }
+  }
+
   </style>
 </head>
 <body>
@@ -1016,15 +1289,14 @@
   </div>
 </div>
 
-<!-- ══════════ JUMP NAV ══════════ -->
-<div class="jump-nav" style="background:#fff;border-bottom:1px solid var(--border);padding:10px 60px;display:flex;gap:8px;flex-wrap:wrap;position:sticky;top:0;z-index:99;box-shadow:0 1px 6px rgba(0,0,0,0.06);">
-  <a href="#flights" style="text-decoration:none;background:var(--cream);border:1px solid var(--border);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px;white-space:nowrap;">✈ Flights</a>
-  <a href="#paris1" style="text-decoration:none;background:var(--cream);border:1px solid var(--border);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px;white-space:nowrap;">🗼 Paris I</a>
-  <a href="#burgundy" style="text-decoration:none;background:#6b2737;border:1px solid #6b2737;color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px;white-space:nowrap;">🍷 Burgundy</a>
-  <a href="#paris2" style="text-decoration:none;background:var(--cream);border:1px solid var(--border);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px;white-space:nowrap;">🏝 Paris II</a>
-  <a href="#megi" style="text-decoration:none;background:#2d1b4e;border:1px solid #2d1b4e;color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px;white-space:nowrap;">💜 Date Nights</a>
-  <a href="#tips" style="text-decoration:none;background:var(--cream);border:1px solid var(--border);color:var(--navy);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px;white-space:nowrap;">📌 Tips</a>
-</div>
+<!-- ══════════ TAB NAV ══════════ -->
+<nav class="tab-nav" id="tabNav">
+  <button class="tab-btn active" data-tab="tab-week1" onclick="switchTab('tab-week1')">🗼 Week 1 · Paris <span style="opacity:.55;font-weight:400;">May 23–29</span></button>
+  <button class="tab-btn" data-tab="tab-week2" onclick="switchTab('tab-week2')">🍷 Week 2 · Burgundy <span style="opacity:.55;font-weight:400;">May 30–Jun 5</span></button>
+  <button class="tab-btn" data-tab="tab-week3" onclick="switchTab('tab-week3')">🏝 Week 3 · Paris <span style="opacity:.55;font-weight:400;">Jun 6–12</span></button>
+  <button class="tab-btn tab-dates" data-tab="tab-dates" onclick="switchTab('tab-dates')">💜 Dates with Megi</button>
+  <button class="tab-btn" data-tab="tab-tips" onclick="switchTab('tab-tips')">📌 Tips</button>
+</nav>
 
 <!-- ══════════ OVERVIEW STRIP ══════════ -->
 <div class="overview-strip">
@@ -1108,11 +1380,12 @@
   </div>
 </div>
 
-<!-- ══════════ FLIGHTS ══════════ -->
+<div class="tab-panel active" id="tab-week1">
+
+<!-- ══════════ OUTBOUND FLIGHTS ══════════ -->
 <div class="flights-section" id="flights">
   <div style="max-width:840px;margin:0 auto;">
     <h2 style="font-family:'Playfair Display',serif;font-size:24px;color:var(--navy);margin-bottom:4px;">Flights</h2>
-
 
     <div class="flight-card">
       <div class="flight-badge">Leg 1</div>
@@ -1132,26 +1405,8 @@
       <div class="flight-status">Booked ✓<br><span style="color:#16a34a;font-weight:700;">La Compagnie</span></div>
     </div>
 
-    <div class="flight-card">
-      <div class="flight-badge" style="background:#374151;">Return Leg 1</div>
-      <div>
-        <div class="flight-route">ORY → EWR</div>
-        <div class="flight-detail">June 12 &nbsp;·&nbsp; La Compagnie &nbsp;·&nbsp; All-Business Class &nbsp;·&nbsp; Arrives <strong>1:00 pm ET</strong> &nbsp;·&nbsp; 4 hrs to clear customs and get to domestic terminal</div>
-      </div>
-      <div class="flight-status">Booked ✓<br><span style="color:#16a34a;font-weight:700;">La Compagnie</span></div>
-    </div>
-
-    <div class="flight-card">
-      <div class="flight-badge" style="background:#374151;">Return Leg 2</div>
-      <div>
-        <div class="flight-route">EWR → DFW</div>
-        <div class="flight-detail">June 12 &nbsp;·&nbsp; American Airlines &nbsp;·&nbsp; Departs <strong>5:00 pm ET</strong> &nbsp;·&nbsp; Arrives <strong>~10:00 pm CT</strong> &nbsp;·&nbsp; Nonstop</div>
-      </div>
-      <div class="flight-status">Booked ✓<br><span style="color:#16a34a;font-weight:700;">American Airlines</span></div>
-    </div>
-
     <div class="flight-note">
-      ✅ <strong>All flights booked.</strong> May 23: land EWR at 4 pm, 3 hours to reach the La Compagnie international lounge before your 7 pm departure. June 12: land EWR at 1 pm, 4 hours to clear customs and make your 5 pm American flight home. Comfortable on both ends.
+      ✅ <strong>Outbound flights booked.</strong> May 23: land EWR at 4 pm, 3 hours to reach the La Compagnie international lounge before your 7 pm departure. Arrive Paris Orly May 24 morning.
     </div>
   </div>
 </div>
@@ -1669,6 +1924,10 @@
   </div>
 
 </div><!-- /days-section Paris I -->
+
+</div><!-- /tab-panel week1 -->
+
+<div class="tab-panel" id="tab-week2">
 
 <div id="burgundy"></div>
 <!-- ══════════ BURGUNDY BANNER ══════════ -->
@@ -2228,6 +2487,28 @@
     </div>
   </div>
 
+</div><!-- /days-section Week 2 Paris II Days 12–14 -->
+
+</div><!-- /tab-panel week2 -->
+
+<div class="tab-panel" id="tab-week3">
+
+<!-- ══════════ PARIS II · WEEK 3 BANNER ══════════ -->
+<div class="img-banner">
+  <img src="https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f?auto=format&fit=crop&w=1400&q=80"
+    alt="Île Saint-Louis and Seine"
+    onerror="this.style.background='linear-gradient(135deg,#0057a8,#003d7a)';this.style.display='block'">
+  <div class="img-banner-overlay" style="background:linear-gradient(to right, rgba(0,50,100,0.78) 0%, rgba(0,50,100,0.1) 60%);">
+    <div class="img-banner-text">
+      <p>Final Week</p>
+      <h2>Paris II<br>June 6–12 · Île Saint-Louis</h2>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ DAYS 15–21 · PARIS II WEEK 3 ══════════ -->
+<div class="days-section">
+
   <!-- DAY 15 -->
   <div class="day-card">
     <div class="day-header">
@@ -2714,7 +2995,40 @@
     </div>
   </div>
 
-</div><!-- /days-section Paris II -->
+</div><!-- /days-section Paris II Week 3 -->
+
+<!-- ══════════ RETURN FLIGHTS ══════════ -->
+<div class="flights-section">
+  <div style="max-width:840px;margin:0 auto;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:24px;color:var(--navy);margin-bottom:4px;">Return Flights</h2>
+
+    <div class="flight-card">
+      <div class="flight-badge" style="background:#374151;">Return Leg 1</div>
+      <div>
+        <div class="flight-route">ORY → EWR</div>
+        <div class="flight-detail">June 12 &nbsp;·&nbsp; La Compagnie &nbsp;·&nbsp; All-Business Class &nbsp;·&nbsp; Arrives <strong>1:00 pm ET</strong> &nbsp;·&nbsp; 4 hrs to clear customs and get to domestic terminal</div>
+      </div>
+      <div class="flight-status">Booked ✓<br><span style="color:#16a34a;font-weight:700;">La Compagnie</span></div>
+    </div>
+
+    <div class="flight-card">
+      <div class="flight-badge" style="background:#374151;">Return Leg 2</div>
+      <div>
+        <div class="flight-route">EWR → DFW</div>
+        <div class="flight-detail">June 12 &nbsp;·&nbsp; American Airlines &nbsp;·&nbsp; Departs <strong>5:00 pm ET</strong> &nbsp;·&nbsp; Arrives <strong>~10:00 pm CT</strong> &nbsp;·&nbsp; Nonstop</div>
+      </div>
+      <div class="flight-status">Booked ✓<br><span style="color:#16a34a;font-weight:700;">American Airlines</span></div>
+    </div>
+
+    <div class="flight-note">
+      ✅ <strong>Return flights booked.</strong> June 12: land EWR at 1 pm, 4 hours to clear customs and make your 5 pm American flight home. Wheels down Dallas ~10 pm CT.
+    </div>
+  </div>
+</div>
+
+</div><!-- /tab-panel week3 -->
+
+<div class="tab-panel" id="tab-dates">
 
 <div id="megi"></div>
 <!-- ══════════ MEGI DATE NIGHTS BANNER ══════════ -->
@@ -2725,7 +3039,7 @@
   <div class="img-banner-overlay" style="background:linear-gradient(to right, rgba(45,27,78,0.85) 0%, rgba(45,27,78,0.1) 60%);">
     <div class="img-banner-text">
       <p>Special Section</p>
-      <h2>Date Nights<br>with Megi</h2>
+      <h2>Dates with Megi</h2>
     </div>
   </div>
 </div>
@@ -3333,6 +3647,140 @@
       </div>
     </div>
 
+    <!-- ── CATEGORY 9: 18+ Private ── -->
+    <div class="dn-category" style="margin-top:32px;">
+      <div class="dn-cat-label" style="background:linear-gradient(135deg,#7b1c2e,#a32d45);color:#fff;">🔞 Adults Only — Private</div>
+
+      <!-- PIN LOCK WRAPPER -->
+      <div id="adult-lock-wrapper" style="background:#fff5f7;border:2px solid #d4546a;border-radius:12px;overflow:hidden;margin-top:12px;">
+
+        <!-- LOCKED STATE -->
+        <div id="adult-locked" style="padding:36px 28px;text-align:center;">
+          <div style="font-size:36px;margin-bottom:12px;">🔒</div>
+          <p style="font-family:'Playfair Display',serif;font-size:20px;color:#7b1c2e;font-weight:700;margin-bottom:6px;">Private Section</p>
+          <p style="font-size:13px;color:#888;margin-bottom:20px;">Enter your 6-digit PIN to unlock</p>
+          <div style="display:flex;justify-content:center;gap:8px;align-items:center;flex-wrap:wrap;">
+            <input id="adult-pin-input" type="password" inputmode="numeric" maxlength="6" placeholder="• • • • • •"
+              style="border:2px solid #d4546a;border-radius:8px;padding:10px 16px;font-size:18px;letter-spacing:6px;text-align:center;width:140px;outline:none;color:#2d1b4e;"
+              onkeydown="if(event.key==='Enter') unlockAdult()" />
+            <button onclick="unlockAdult()" style="background:linear-gradient(135deg,#7b1c2e,#a32d45);color:#fff;border:none;border-radius:8px;padding:10px 22px;font-size:13px;font-weight:700;letter-spacing:1px;cursor:pointer;text-transform:uppercase;">Unlock</button>
+          </div>
+          <p id="adult-pin-error" style="color:#c0392b;font-size:12px;margin-top:10px;display:none;">Wrong PIN. Try again.</p>
+        </div>
+
+        <!-- UNLOCKED CONTENT (hidden until PIN correct) -->
+        <div id="adult-unlocked" style="display:none;padding:24px 20px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:10px;">
+            <p style="font-family:'Playfair Display',serif;font-size:16px;color:#7b1c2e;margin:0;">🔓 <em>For you and Megi's eyes only.</em></p>
+            <button onclick="lockAdult()" style="background:none;border:1px solid #d4546a;border-radius:20px;padding:5px 14px;font-size:11px;color:#d4546a;cursor:pointer;font-weight:700;letter-spacing:1px;text-transform:uppercase;">🔒 Lock</button>
+          </div>
+
+          <div class="dn-grid">
+
+            <details class="dn-card" style="border-color:#f0b8c3;">
+              <summary><span class="dn-title" style="color:#7b1c2e;">Passage du Désir — Visit a Sex Shop Together</span><span class="dn-chevron">▼</span></summary>
+              <div class="dn-body">
+                <div class="dn-desc">Paris's most famous adult boutique — Passage du Désir (3 Boulevard Saint-Denis, 2nd arr) — is the opposite of a sketchy shop. It's well-lit, professionally run, stocked with high-quality toys, lingerie, and novelties, and draws a totally normal mix of couples, tourists, and curious Parisians. Browse together, let her pick something. The act of deciding together, in a city where nobody knows you, and walking out with a paper bag is genuinely one of the most fun things you can do in Paris as a couple. Follow with drinks at a bar and a knowing look.</div>
+                <div class="dn-meta" style="color:#a32d45;">📍 3 Blvd Saint-Denis, 2nd arr · open daily until 10pm · no pressure, all vibes · go early evening</div>
+              </div>
+            </details>
+
+            <details class="dn-card" style="border-color:#f0b8c3;">
+              <summary><span class="dn-title" style="color:#7b1c2e;">Spend an Afternoon Doing Absolutely Nothing in the Hotel Room</span><span class="dn-chevron">▼</span></summary>
+              <div class="dn-body">
+                <div class="dn-desc">Order a bottle of Burgundy or Champagne from room service. Close the shutters. Put something on low in the background — French radio, a playlist, nothing. No phones. You've got the rest of the trip to see the city. Paris is the only place in the world where staying in bed all afternoon doesn't feel like a waste — it feels like exactly the right call. You'll remember this as much as any museum or restaurant on the trip. Hôtel du Jeu de Paume's rooms are made for this. Don't rush out.</div>
+                <div class="dn-meta" style="color:#a32d45;">📍 Hôtel du Jeu de Paume, Île Saint-Louis · afternoon · bottle of Burgundy from the minibar · phones face-down</div>
+              </div>
+            </details>
+
+            <details class="dn-card" style="border-color:#f0b8c3;">
+              <summary><span class="dn-title" style="color:#7b1c2e;">Make Out by the Seine — Pont Marie at Night</span><span class="dn-chevron">▼</span></summary>
+              <div class="dn-body">
+                <div class="dn-desc">Pont Marie (4th arr) connects the Right Bank to the eastern end of Île Saint-Louis and is one of the oldest and quietest bridges in Paris. After 10pm it's almost deserted. The stone parapet faces the Seine directly — Notre-Dame lit up to your left, the island stretching ahead. Stand there, lean her against the railing, and make out like you're in a 1963 French film. Paris invented this. Nobody will look twice; Parisians consider conspicuous public affection entirely normal and slightly required. This is not a suggestion — it's homework.</div>
+                <div class="dn-meta" style="color:#a32d45;">📍 Pont Marie, 4th arr · after 10pm · free · no plan needed · steps from her apartment</div>
+              </div>
+            </details>
+
+            <details class="dn-card" style="border-color:#f0b8c3;">
+              <summary><span class="dn-title" style="color:#7b1c2e;">Dark Bar, Dark Corner — Candelaria Back Room</span><span class="dn-chevron">▼</span></summary>
+              <div class="dn-body">
+                <div class="dn-desc">The speakeasy behind Candelaria (52 Rue de Saintonge, 3rd) has low lighting, tight booths, and a very close-quarters vibe. Order two mezcal cocktails, find the booth furthest from the bar, and let the evening go wherever it goes. The dark bar format — where everyone is doing the same thing and nobody can really see anyone — is the ideal environment for hands that wander, whispered things, and whatever comes next. The cocktails are excellent. The vibe does the rest. Arrive at 10pm, exit when you feel like it.</div>
+                <div class="dn-meta" style="color:#a32d45;">📍 Candelaria back room · 52 Rue de Saintonge, 3rd · 10pm–1am · walk-in · mezcal mandatory</div>
+              </div>
+            </details>
+
+            <details class="dn-card" style="border-color:#f0b8c3;">
+              <summary><span class="dn-title" style="color:#7b1c2e;">Couples Massage at a Hammam — Le Bain Douche Arabe</span><span class="dn-chevron">▼</span></summary>
+              <div class="dn-body">
+                <div class="dn-desc">The Marais has two excellent hammams that welcome mixed-gender couples: Grande Mosquée de Paris (39 Rue Geoffroy Saint-Hilaire, 5th) and Les Bains du Marais (31-33 Rue des Blancs Manteaux, 4th). Book a shared couples' session — steam room, black soap scrub, and a 60-minute oil massage back-to-back. The scrub alone will leave you feeling like a different person. You'll be warm, loose, and very aware of each other's skin for the rest of the evening. Book ahead; couples slots fill fast. Follow with dinner.</div>
+                <div class="dn-meta" style="color:#a32d45;">📍 Les Bains du Marais · 31 Rue des Blancs Manteaux, 4th · book ahead · couples session ~€120pp · 3 hours</div>
+              </div>
+            </details>
+
+            <details class="dn-card" style="border-color:#f0b8c3;">
+              <summary><span class="dn-title" style="color:#7b1c2e;">Crazy Horse Late Show — Then Take the Energy Home</span><span class="dn-chevron">▼</span></summary>
+              <div class="dn-body">
+                <div class="dn-desc">The Crazy Horse's 11pm show is the late one — smaller crowd, tighter room, more charged atmosphere. The show itself is sophisticated burlesque: extraordinary bodies, lighting as sculpture, no actual nudity but deeply sensual. By the time you walk out at midnight you'll both be very aware of each other and very glad you have somewhere to go. Take a taxi back to the island. Don't stop at a bar. Book the show-only tickets (from €95pp) at lecrazyhorseparis.com and get seats in the first section, not the back rows.</div>
+                <div class="dn-meta" style="color:#a32d45;">📍 Crazy Horse · 12 Ave George V, 8th · 11pm show · show-only from €95pp · book ahead · taxi home after</div>
+              </div>
+            </details>
+
+            <details class="dn-card" style="border-color:#f0b8c3;">
+              <summary><span class="dn-title" style="color:#7b1c2e;">Buy Each Other Something Intimate — Galerie Vivienne</span><span class="dn-chevron">▼</span></summary>
+              <div class="dn-body">
+                <div class="dn-desc">The covered arcades have a handful of exceptional lingerie and intimate boutiques — particularly in Galerie Vivienne (2nd arr) and the adjacent Rue des Petits-Champs. The rule: you each buy the other something to wear that night. Set a €60–100 budget. Split up for 30 minutes, make your purchase, meet back at the café inside the gallery. Don't show each other until you're back at the hotel. Paris lingerie boutiques are a different category from anywhere else — the quality and range at mid-range prices is extraordinary. Make an event of the reveal.</div>
+                <div class="dn-meta" style="color:#a32d45;">📍 Galerie Vivienne + Rue des Petits-Champs, 2nd arr · afternoon · ~€60–100 budget each · dinner after, hotel after that</div>
+              </div>
+            </details>
+
+            <details class="dn-card" style="border-color:#f0b8c3;">
+              <summary><span class="dn-title" style="color:#7b1c2e;">Take Photos of Each Other — Actually Intimate Ones</span><span class="dn-chevron">▼</span></summary>
+              <div class="dn-body">
+                <div class="dn-desc">Back at the hotel, golden hour coming through the shuttered windows of a 17th-century room, the Seine outside — take actual portraits of each other. Not tourist selfies. Real ones: the light on her collarbone, her reading, you looking at Paris from the window. Let her direct you and you direct her. Use Portrait mode, no flash. Get close. The photos that feel slightly too intimate to post anywhere are the ones worth keeping. This is Paris, the most photographed city in the world — the photos that matter most will be the private ones you took in that room.</div>
+                <div class="dn-meta" style="color:#a32d45;">📍 Hôtel du Jeu de Paume room · golden hour (9–10pm in June) · just your phone · keep to yourselves</div>
+              </div>
+            </details>
+
+            <details class="dn-card" style="border-color:#f0b8c3;">
+              <summary><span class="dn-title" style="color:#7b1c2e;">Skinny Dip at a Private Plunge — Hôtel Pool After Hours</span><span class="dn-chevron">▼</span></summary>
+              <div class="dn-body">
+                <div class="dn-desc">Several Paris boutique hotels have private plunge pools or terrace tubs accessible to guests — the Hôtel Particulier Montmartre (23 Ave Junot, 18th) has a hot tub on the terrace garden, and select suites at Hôtel du Jeu de Paume have bath situations worth exploring. Call ahead and ask what they've got that isn't on the website. If that's not an option: several naturist swimming clubs operate in Paris (Joséphine Baker pool barge, Piscine Roger Le Gall) — legal, well-run, popular. Do what you feel like doing in whatever water you can find.</div>
+                <div class="dn-meta" style="color:#a32d45;">📍 Hôtel Particulier Montmartre · 23 Ave Junot, 18th · call ahead · terrace hot tub for guests · after 10pm</div>
+              </div>
+            </details>
+
+            <details class="dn-card" style="border-color:#f0b8c3;">
+              <summary><span class="dn-title" style="color:#7b1c2e;">Midnight Walk Back from Anywhere — Take Your Time</span><span class="dn-chevron">▼</span></summary>
+              <div class="dn-body">
+                <div class="dn-desc">Whatever you did tonight, don't take a taxi back. Walk. Île Saint-Louis is never more than 40 minutes from anywhere in central Paris at midnight. This is the walk: through quiet streets, past shut boulangeries and lit pharmacies, across one of the Seine bridges with the city reflected below, into the narrow lanes of the island, to her door. This walk — a little drunk, a little warm, the city asleep around you — is the whole point. Stop wherever it feels right. There is no version of this walk that isn't the right ending to a Paris night.</div>
+                <div class="dn-meta" style="color:#a32d45;">📍 Anywhere in central Paris → Île Saint-Louis · midnight · 20–40 min walk · free · the best part of the night</div>
+              </div>
+            </details>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    function unlockAdult() {
+      var pin = document.getElementById('adult-pin-input').value;
+      if (pin === '6969') {
+        document.getElementById('adult-locked').style.display = 'none';
+        document.getElementById('adult-unlocked').style.display = 'block';
+        document.getElementById('adult-pin-error').style.display = 'none';
+      } else {
+        document.getElementById('adult-pin-error').style.display = 'block';
+        document.getElementById('adult-pin-input').value = '';
+      }
+    }
+    function lockAdult() {
+      document.getElementById('adult-locked').style.display = 'block';
+      document.getElementById('adult-unlocked').style.display = 'none';
+      document.getElementById('adult-pin-input').value = '';
+    }
+    </script>
+
     <!-- NOTE -->
     <div style="background:#2d1b4e;border-radius:10px;padding:20px 24px;color:rgba(255,255,255,0.85);font-size:14px;line-height:1.8;margin-top:8px;">
       <strong style="color:#c9a84c;display:block;margin-bottom:6px;">📌 A note on using this list</strong>
@@ -3342,7 +3790,9 @@
   </div>
 </div>
 
+</div><!-- /tab-panel dates -->
 
+<div class="tab-panel" id="tab-tips">
 <div class="tips-section" id="tips">
   <h2>Essential Tips</h2>
   <div class="tips-grid">
@@ -3373,10 +3823,54 @@
   </div>
 </div>
 
+</div><!-- /tab-panel tips -->
+
 <!-- ══════════ FOOTER ══════════ -->
 <footer>
   Paris &amp; Burgundy &nbsp;·&nbsp; Jimmy Cannon &nbsp;·&nbsp; May 23 – June 12, 2026 &nbsp;·&nbsp; Bon voyage
 </footer>
+
+<!-- ── DATE NIGHT MODAL ── -->
+<div class="dn-modal-overlay" id="dnModalOverlay">
+  <div class="dn-modal">
+    <div class="dn-modal-eyebrow">💜 Megi's Pick</div>
+    <div class="dn-modal-title" id="dnModalTitle"></div>
+    <div class="dn-modal-meta" id="dnModalMeta"></div>
+    <label>Add to which day?</label>
+    <select id="dnDateSelect">
+      <optgroup label="May — Paris I">
+        <option value="02">Saturday, May 24</option>
+        <option value="03">Sunday, May 25</option>
+        <option value="04">Monday, May 26</option>
+        <option value="05">Tuesday, May 27</option>
+        <option value="06">Wednesday, May 28</option>
+        <option value="07">Thursday, May 29</option>
+      </optgroup>
+      <optgroup label="June — Paris II (Île Saint-Louis)">
+        <option value="12">Tuesday, June 3</option>
+        <option value="13">Wednesday, June 4</option>
+        <option value="14">Thursday, June 5</option>
+        <option value="15">Friday, June 6</option>
+        <option value="16">Saturday, June 7</option>
+        <option value="17">Sunday, June 8</option>
+        <option value="18">Monday, June 9</option>
+        <option value="19">Tuesday, June 10</option>
+        <option value="20">Wednesday, June 11</option>
+        <option value="21">Thursday, June 12</option>
+      </optgroup>
+    </select>
+    <label>When in the day?</label>
+    <select id="dnTimeSelect">
+      <option value="evening">Evening</option>
+      <option value="afternoon">Afternoon</option>
+      <option value="morning">Morning</option>
+    </select>
+    <div class="dn-modal-actions">
+      <button class="dn-cancel-btn" id="dnCancelBtn">Cancel</button>
+      <button class="dn-confirm-btn" id="dnConfirmBtn">Add to Itinerary 💜</button>
+    </div>
+  </div>
+</div>
 
 <!-- ── SETUP BANNER ── -->
 <div class="setup-banner" id="setupBanner">
@@ -3401,6 +3895,33 @@ alter table paris_trip disable row level security;</div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 
 <script>
+/* ── TAB SWITCHING ─────────────────────── */
+function switchTab(tabId) {
+  // Hide all panels
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  // Deactivate all buttons
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  // Show target panel
+  const panel = document.getElementById(tabId);
+  if (panel) panel.classList.add('active');
+  // Activate matching button
+  const btn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+  if (btn) btn.classList.add('active');
+  // Scroll to top of tab nav
+  document.getElementById('tabNav').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Persist tab selection
+  try { localStorage.setItem('paris_active_tab', tabId); } catch(e) {}
+}
+
+// Restore last-viewed tab on page load
+(function() {
+  try {
+    const saved = localStorage.getItem('paris_active_tab');
+    if (saved && document.getElementById(saved)) switchTab(saved);
+  } catch(e) {}
+})();
+
 const SUPABASE_URL  = 'https://fvctlmpvivewcbjkugbg.supabase.co';
 const SUPABASE_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ2Y3RsbXB2aXZld2Niamt1Z2JnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY3NDQxNTYsImV4cCI6MjA5MjMyMDE1Nn0.H89lZnOTwhAZwFIbMxJc6mqhEERPAbC7z9bv3O5oU28';
 
@@ -3418,6 +3939,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   injectCheckboxes();
   injectNotesSections();
   injectRestaurantButtons();
+  injectDateNightButtons();
+  setupDNModal();
 
   // Load from localStorage first (instant, no network needed)
   loadFromLocalStorage();
@@ -3433,6 +3956,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Apply saved state and show progress
   applyState();
+  applyDateNights();
   updateProgress();
   scrollToNextItem();
 });
@@ -3685,7 +4209,223 @@ function debounceSave(dayId, statusEl) {
 
 /* ── HELPERS ───────────────────────────────── */
 function ensureDay(dayId) {
-  if (!tripData[dayId]) tripData[dayId] = { checked: [], notes: '', visited: [] };
+  if (!tripData[dayId]) tripData[dayId] = { checked: [], notes: '', visited: [], dateNights: [] };
+  if (!tripData[dayId].dateNights) tripData[dayId].dateNights = [];
+}
+
+/* ── DATE NIGHT SYSTEM ─────────────────────── */
+const MEGI_DAYS = {
+  '02': 'Saturday, May 24',
+  '03': 'Sunday, May 25',
+  '04': 'Monday, May 26',
+  '05': 'Tuesday, May 27',
+  '06': 'Wednesday, May 28',
+  '07': 'Thursday, May 29',
+  '12': 'Tuesday, June 3',
+  '13': 'Wednesday, June 4',
+  '14': 'Thursday, June 5',
+  '15': 'Friday, June 6',
+  '16': 'Saturday, June 7',
+  '17': 'Sunday, June 8',
+  '18': 'Monday, June 9',
+  '19': 'Tuesday, June 10',
+  '20': 'Wednesday, June 11',
+  '21': 'Thursday, June 12'
+};
+
+let pendingDN = null;
+
+function injectDateNightButtons() {
+  document.querySelectorAll('.dn-card').forEach(card => {
+    const body = card.querySelector('.dn-body');
+    const titleEl = card.querySelector('.dn-title');
+    const metaEl  = card.querySelector('.dn-meta');
+    if (!body || !titleEl) return;
+    const btn = document.createElement('button');
+    btn.className = 'dn-add-btn';
+    btn.textContent = '💜 Add to Itinerary';
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      pendingDN = {
+        title: titleEl.textContent.trim(),
+        meta:  metaEl ? metaEl.textContent.trim() : ''
+      };
+      document.getElementById('dnModalTitle').textContent = pendingDN.title;
+      document.getElementById('dnModalMeta').textContent  = pendingDN.meta;
+      document.getElementById('dnModalOverlay').classList.add('open');
+    });
+    body.appendChild(btn);
+  });
+}
+
+function setupDNModal() {
+  document.getElementById('dnCancelBtn').addEventListener('click', () => {
+    document.getElementById('dnModalOverlay').classList.remove('open');
+    pendingDN = null;
+  });
+  document.getElementById('dnModalOverlay').addEventListener('click', e => {
+    if (e.target === document.getElementById('dnModalOverlay')) {
+      document.getElementById('dnModalOverlay').classList.remove('open');
+      pendingDN = null;
+    }
+  });
+  document.getElementById('dnConfirmBtn').addEventListener('click', () => {
+    if (!pendingDN) return;
+    const dayId     = document.getElementById('dnDateSelect').value;
+    const timeOfDay = document.getElementById('dnTimeSelect').value;
+    addDateNightToDay(dayId, pendingDN.title, pendingDN.meta, timeOfDay);
+    document.getElementById('dnModalOverlay').classList.remove('open');
+    pendingDN = null;
+  });
+}
+
+function addDateNightToDay(dayId, title, meta, timeOfDay) {
+  ensureDay(dayId);
+  const dn = { id: Date.now(), title, meta, timeOfDay };
+  tripData[dayId].dateNights.push(dn);
+  renderDateNight(dayId, dn);
+  saveToLocalStorage();
+  if (db) debounceSave(dayId);
+  const card = document.querySelector(`.day-card[data-day="${dayId}"]`);
+  if (card) {
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    card.style.outline = '3px solid #9333ea';
+    setTimeout(() => card.style.outline = '', 2200);
+  }
+  showToast(`💜 Added to ${MEGI_DAYS[dayId] || 'Day ' + dayId}`);
+  refreshDnCardBadges();
+}
+
+function renderDateNight(dayId, dn) {
+  const card = document.querySelector(`.day-card[data-day="${dayId}"]`);
+  if (!card) return;
+  const list = card.querySelector('.activity-list');
+  if (!list) return;
+
+  const timingNote = buildTimingNote(card, dn.timeOfDay, dn.meta);
+
+  const li = document.createElement('li');
+  li.className = 'date-night-li';
+  li.dataset.dnId  = dn.id;
+  li.dataset.dayId = dayId;
+  li.innerHTML = `
+    <div class="dn-li-header">
+      <span class="dn-li-badge">💜 Date Night</span>
+      <span class="dn-li-title">${dn.title}</span>
+      <button class="dn-li-remove" title="Remove">✕</button>
+    </div>
+    <div class="dn-li-meta">${dn.meta}</div>
+    ${timingNote ? `<div class="dn-li-timing">⏰ ${timingNote}</div>` : ''}
+  `;
+  li.querySelector('.dn-li-remove').addEventListener('click', () => {
+    removeDateNight(dayId, dn.id, li);
+  });
+
+  if (dn.timeOfDay === 'morning') {
+    list.insertBefore(li, list.firstChild);
+  } else if (dn.timeOfDay === 'afternoon') {
+    const morningItem = Array.from(list.querySelectorAll('li:not(.date-night-li)')).find(el =>
+      /morning|breakfast/i.test(el.textContent)
+    );
+    if (morningItem) morningItem.after(li);
+    else list.insertBefore(li, list.firstChild);
+  } else {
+    list.appendChild(li);
+  }
+}
+
+function buildTimingNote(card, timeOfDay, meta) {
+  if (timeOfDay !== 'evening') return '';
+  const items = Array.from(card.querySelectorAll('.activity-list li:not(.date-night-li)'));
+  const hasEveningConflict = items.some(li => {
+    const t = li.textContent.toLowerCase();
+    return t.includes('evening') || t.includes('dinner') || t.includes('dusk') || /[7-9]:\d{2}\s*pm/i.test(t);
+  });
+  const durationMatch = meta.match(/(\d)\s*[-–]\s*(\d)\s*hour/i);
+  const parts = [];
+  if (hasEveningConflict) parts.push('You have evening plans — consider moving dinner to 7:00 pm to make room.');
+  if (durationMatch) parts.push(`This activity runs ${durationMatch[1]}–${durationMatch[2]} hours.`);
+  return parts.join(' ');
+}
+
+function removeDateNight(dayId, dnId, liEl) {
+  if (tripData[dayId] && tripData[dayId].dateNights) {
+    tripData[dayId].dateNights = tripData[dayId].dateNights.filter(d => d.id !== dnId);
+  }
+  if (liEl) liEl.remove();
+  saveToLocalStorage();
+  if (db) debounceSave(dayId);
+  showToast('Date night removed');
+  refreshDnCardBadges();
+}
+
+function applyDateNights() {
+  Object.keys(tripData).forEach(dayId => {
+    const dns = tripData[dayId] && tripData[dayId].dateNights;
+    if (!dns || !dns.length) return;
+    dns.forEach(dn => renderDateNight(dayId, dn));
+  });
+  refreshDnCardBadges();
+}
+
+/* ── DN CARD BADGES (Date Nights tab status) ── */
+function refreshDnCardBadges() {
+  // Build a lookup: title -> [ { dayId, dnId, dayLabel } ]
+  const scheduled = {};
+  Object.keys(tripData).forEach(dayId => {
+    const dns = tripData[dayId] && tripData[dayId].dateNights;
+    if (!dns || !dns.length) return;
+    dns.forEach(dn => {
+      const key = dn.title.trim();
+      if (!scheduled[key]) scheduled[key] = [];
+      scheduled[key].push({ dayId, dnId: dn.id, dayLabel: MEGI_DAYS[dayId] || ('Day ' + dayId) });
+    });
+  });
+
+  document.querySelectorAll('.dn-card').forEach(card => {
+    const titleEl = card.querySelector('.dn-title');
+    const body    = card.querySelector('.dn-body');
+    const addBtn  = card.querySelector('.dn-add-btn');
+    if (!titleEl || !body) return;
+
+    const title   = titleEl.textContent.trim();
+    const entries = scheduled[title] || [];
+
+    // Remove old badge block if present
+    const old = body.querySelector('.dn-scheduled');
+    if (old) old.remove();
+
+    if (entries.length === 0) {
+      if (addBtn) { addBtn.classList.remove('is-scheduled'); addBtn.textContent = '💜 Add to Itinerary'; }
+      return;
+    }
+
+    // Build badge block
+    const wrap = document.createElement('div');
+    wrap.className = 'dn-scheduled';
+    wrap.innerHTML = `<div class="dn-scheduled-label">✓ Added to itinerary</div>`;
+
+    entries.forEach(({ dayId, dnId, dayLabel }) => {
+      const chip = document.createElement('span');
+      chip.className = 'dn-sched-chip';
+      chip.innerHTML = `📅 ${dayLabel} <button class="dn-sched-chip-remove" title="Remove from ${dayLabel}">✕</button>`;
+      chip.querySelector('.dn-sched-chip-remove').addEventListener('click', e => {
+        e.stopPropagation();
+        const liEl = document.querySelector(`.date-night-li[data-dn-id="${dnId}"]`);
+        removeDateNight(dayId, dnId, liEl);
+      });
+      wrap.appendChild(chip);
+    });
+
+    // Insert before the Add button
+    if (addBtn) {
+      body.insertBefore(wrap, addBtn);
+      addBtn.classList.add('is-scheduled');
+      addBtn.textContent = '＋ Add to Another Day';
+    } else {
+      body.appendChild(wrap);
+    }
+  });
 }
 
 function showToast(msg, isError = false) {
