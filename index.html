@@ -3907,6 +3907,9 @@ function switchTab(tabId) {
   // Activate matching button
   const btn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
   if (btn) btn.classList.add('active');
+  // Hide overview strip and weather on Dates with Megi tab
+  const hiddenOnDates = [document.querySelector('.overview-strip'), document.querySelector('.weather-section')];
+  hiddenOnDates.forEach(el => { if (el) el.style.display = tabId === 'tab-dates' ? 'none' : ''; });
   // Scroll to top of tab nav
   document.getElementById('tabNav').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   window.scrollTo({ top: 0, behavior: 'smooth' });
