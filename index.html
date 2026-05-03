@@ -4086,9 +4086,10 @@ async function loadData() {
 
   (data || []).forEach(row => {
     tripData[row.day_id] = {
-      checked:  row.checked_items       || [],
-      notes:    row.notes               || '',
-      visited:  row.visited_restaurants || []
+      checked:     row.checked_items       || [],
+      notes:       row.notes               || '',
+      visited:     row.visited_restaurants || [],
+      dateNights:  row.date_nights         || []
     };
   });
 }
@@ -4190,6 +4191,7 @@ async function persistDay(dayId) {
     checked_items:        data.checked,
     notes:                data.notes,
     visited_restaurants:  data.visited,
+    date_nights:          data.dateNights || [],
     updated_at:           new Date().toISOString()
   }, { onConflict: 'day_id' });
 
